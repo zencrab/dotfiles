@@ -12,6 +12,10 @@
       kewlfft.aur.aur:
         name: libnotify
 
+    - name: Install package zen-browser-bin
+      kewlfft.aur.aur:
+        name: zen-browser-bin
+
     - name: Install Fish
       import_tasks: fish.yml
 
@@ -21,7 +25,7 @@
     - name: Install Waybar
       import_tasks: waybar.yml
 
-    - name: Install package hyprpaper 
+    - name: Install package hyprpaper
       kewlfft.aur.aur:
         name: hyprpaper
 

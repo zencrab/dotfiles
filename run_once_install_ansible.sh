@@ -3,7 +3,7 @@
 # Install ansible
 sudo pacman -Sy --needed ansible
 
-# Install ansible module for AUR
+# Install ansible modules
 ansible-galaxy collection install kewlfft.aur
 
 # Run ansible installation
