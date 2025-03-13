@@ -37,3 +37,8 @@
 
     - name: Install Yazi
       import_tasks: yazi.yml
+
+    - name: Install package lazygit 
+      kewlfft.aur.aur:
+        name: lazygit
+
