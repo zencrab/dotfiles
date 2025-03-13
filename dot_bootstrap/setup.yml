@@ -1,12 +1,15 @@
 ---
 # setup.yml
-name: Setting up Arch Linux 
-hosts: localhost
-tasks:
+- name: Setting up ArchLinux 
+  hosts: localhost
+  tasks:
 
-  - name: Install package wl-clipboard
-    kewlfft.aur.aur:
-      name: wl-clipboard
+    - name: Install package wl-clipboard
+      kewlfft.aur.aur:
+        name: wl-clipboard
 
-  - name: Install Neovim
-    include_tasks: neovim.yml
+    - name: Install Neovim
+      import_tasks: neovim.yml
+
+    - name: Install Bat
+      import_tasks: bat.yml
