@@ -41,4 +41,6 @@
     - name: Install package lazygit 
       kewlfft.aur.aur:
         name: lazygit
-
+    
+    - name: Install Zathura
+      import_tasks: zathura.yml
