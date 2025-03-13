@@ -1,0 +1,8 @@
+- name: Install package waybar
+  kewlfft.aur.aur:
+    name: waybar
+
+- name: Install package brightnessctl
+  kewlfft.aur.aur:
+    name: brightnessctl
+
