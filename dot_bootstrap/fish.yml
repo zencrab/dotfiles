@@ -13,8 +13,3 @@
 - name: Install package starship
   kewlfft.aur.aur:
     name: starship
-
-- name: Set shell to fish 
-  user:
-    name: "{{ ansible_user_id }}"
-    shell: /bin/fish

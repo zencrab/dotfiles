@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Install ansible
-sudo pacman -Sy --needed ansible
+sudo pacman -Sy ansible
 
-# Install ansible modules
+# Install ansible module for AUR packages
 ansible-galaxy collection install kewlfft.aur
 
 # Run ansible installation

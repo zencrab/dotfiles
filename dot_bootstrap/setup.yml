@@ -12,12 +12,24 @@
       kewlfft.aur.aur:
         name: libnotify
 
+    - name: Install package python-dbus, networkmanager 
+      kewlfft.aur.aur:
+        name: 
+          - python-dbus
+          - networkmanager
+
     - name: Install package zen-browser-bin
       kewlfft.aur.aur:
         name: zen-browser-bin
 
     - name: Install Fish
       import_tasks: fish.yml
+
+    - name: Install Neovim
+      import_tasks: neovim.yml
+
+    - name: Install Tmux
+      import_tasks: tmux.yml
 
     - name: Install Bat
       import_tasks: bat.yml

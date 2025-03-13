@@ -1,0 +1,5 @@
+- name: Install package tmux, tmux-plugin-manager
+  kewlfft.aur.aur:
+    name:
+      - tmux
+      - tmux-plugin-manager
