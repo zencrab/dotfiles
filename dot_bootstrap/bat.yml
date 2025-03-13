@@ -7,6 +7,6 @@
       - bat-extras
 
 - name: Build cache bat
-  ansible.builtin.command:
-    cmd: bat cache --build
-
+  shell: "bat cache --build && touch {{ ansible_env.HOME }}/.cache/bat/build.lock"
+  args:
+    creates: "{{ ansible_env.HOME }}/.cache/bat/build.lock"

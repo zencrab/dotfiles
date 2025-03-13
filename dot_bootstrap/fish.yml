@@ -14,13 +14,7 @@
   kewlfft.aur.aur:
     name: starship
 
-- name: Get current shell
-  shell: "getent passwd zencrab | awk -F: '{print $7}'"
-  register: current_shell
-  changed_when: false
-
-- name: Change shell to fish
+- name: Set shell to fish 
   user:
-    name: zencrab 
+    name: "{{ ansible_user_id }}"
     shell: /bin/fish
-  when: current_shell.stdout != "/bin/fish"
