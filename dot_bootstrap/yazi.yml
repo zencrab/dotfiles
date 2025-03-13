@@ -5,5 +5,10 @@
 - name: Install plugin full-border.yazi
   command: "ya pack -a yazi-rs/plugins:full-border"
   args:
-    creates: "/home/zencrab/.config/yazi/plugins/full-border.yazi"
+    creates: "{{ ansible_env.HOME }}/.config/yazi/plugins/full-border.yazi"
+
+- name: Install plugin catppuccin-mocha.yazi
+  command: "ya pack -a yazi-rs/flavors:catppuccin-mocha"
+  args:
+    creates: "{{ ansible_env.HOME }}/.config/yazi/flavors/catppuccin-mocha.yazi"
 
