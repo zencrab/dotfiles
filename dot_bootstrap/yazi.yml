@@ -1,0 +1,9 @@
+- name: Install package yazi
+  kewlfft.aur.aur:
+    name: yazi
+
+- name: Install plugin full-border.yazi
+  command: "ya pack -a yazi-rs/plugins:full-border"
+  args:
+    creates: "/home/zencrab/.config/yazi/plugins/full-border.yazi"
+

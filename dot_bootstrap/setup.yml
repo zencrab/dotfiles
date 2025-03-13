@@ -26,3 +26,6 @@
 
     - name: Install Fonts
       import_tasks: fonts.yml
+
+    - name: Install Yazi
+      import_tasks: yazi.yml
