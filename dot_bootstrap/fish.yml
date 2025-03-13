@@ -1,0 +1,26 @@
+- name: Install package fish, fisher
+  kewlfft.aur.aur:
+    name:
+      - fish
+      - fisher
+
+- name: Install package zoxide, eza
+  kewlfft.aur.aur:
+    name:
+      - zoxide
+      - eza
+
+- name: Install package starship
+  kewlfft.aur.aur:
+    name: starship
+
+- name: Get current shell
+  shell: "getent passwd zencrab | awk -F: '{print $7}'"
+  register: current_shell
+  changed_when: false
+
+- name: Change shell to fish
+  user:
+    name: zencrab 
+    shell: /bin/fish
+  when: current_shell.stdout != "/bin/fish"
