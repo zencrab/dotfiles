@@ -1,0 +1,6 @@
+- name: Install package jupyterlab, jupyterlab-catppuccin
+  kewlfft.aur.aur:
+    name:
+      - jupyterlab
+      - jupyterlab-catppuccin
+      - qutebrowser
