@@ -8,8 +8,15 @@
       kewlfft.aur.aur:
         name: wl-clipboard
 
+    - name: Install package libnotify
+      kewlfft.aur.aur:
+        name: libnotify
+
     - name: Install Neovim
       import_tasks: neovim.yml
 
     - name: Install Bat
       import_tasks: bat.yml
+
+    - name: Install Waybar
+      import_tasks: waybar.yml

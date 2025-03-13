@@ -1,0 +1,95 @@
+@import "catppuccin-mocha.css";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background: @base;
+    border: 2px solid @blue;
+    border-radius: 6;
+
+}
+
+.modules-left, .modules-center, .modules-right {
+    padding: 8px;
+}
+
+.modules-center {
+    color: @text;
+    padding: 0 15;
+}
+
+.modules-right {
+    color: @text;
+}
+
+#workspaces {
+    padding: 0px 5px;
+}
+#workspaces button {
+    all:unset;
+    padding: 0px 10px;
+    color: @overlay0;
+}
+#workspaces button.active {
+    color: @text
+}
+
+#custom-endpoint, #custom-expand {
+    padding: 0px 5px;
+}
+#custom-pacman, #bluetooth, #cpu, #memory, #temperature, #backlight, #pulseaudio, #network, #battery, #clock {
+    padding: 0px 10px;
+}
+
+
+/* ---------------------------------------------------------------------------------------
+Tooltip
+--------------------------------------------------------------------------------------- */
+
+tooltip {
+    background: @surface0;
+    color: @subtext1;
+    border: 0.3px solid @text;
+}
+
+/* ---------------------------------------------------------------------------------------
+Battery Coloring
+--------------------------------------------------------------------------------------- */
+#battery.charging, #battery.plugged, #battery.full {
+    color: @green;
+}
+
+#battery.warning,
+#battery.charging.warning {
+    color: @yellow;
+}
+
+#battery.critical,
+#battery.charging.critical {
+    color: @red;
+}
+
+/* ---------------------------------------------------------------------------------------
+Volume Coloring
+--------------------------------------------------------------------------------------- */
+#pulseaudio.bluetooth {
+    color: @blue;
+}
+
+#pulseaudio.muted.normal, #pulseaudio.muted.loud, #pulseaudio.muted {
+    color: @surface2;
+}
+
+#pulseaudio.normal {
+    color: @text;
+}
+#pulseaudio.loud {
+    color: @yellow;
+}
+#pulseaudio {
+    color: @red;
+}
