@@ -1,6 +1,6 @@
 ---
 # setup.yml
-- name: Setting up ArchLinux 
+- name: Setting up Arch Linux 
   hosts: localhost
   tasks:
 
@@ -12,11 +12,15 @@
       kewlfft.aur.aur:
         name: libnotify
 
-    - name: Install Neovim
-      import_tasks: neovim.yml
+    - name: Install Fish
+      import_tasks: fish.yml
 
     - name: Install Bat
       import_tasks: bat.yml
 
     - name: Install Waybar
       import_tasks: waybar.yml
+
+    - name: Install Conda 
+      import_tasks: conda.yml
+

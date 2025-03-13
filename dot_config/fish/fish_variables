@@ -1,10 +1,12 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:nvim
 SETUVAR --export GUM_CHOOSE_CURSOR_FOREGROUND:blue
 SETUVAR --export GUM_CHOOSE_SELECTED_FOREGROUND:green
 SETUVAR --export GUM_INPUT_CURSOR_FOREGROUND:red
 SETUVAR --export GUM_SPINNER_FOREGROUND:red
 SETUVAR --export GUM_SPINNER_TITLE_FOREGROUND:red
+SETUVAR --export VISUAL:nvim
 SETUVAR WARP_ENABLE_WAYLAND:1
 SETUVAR __fish_initialized:3800
 SETUVAR _fisher_plugins:reitzig/sdkman\x2dfor\x2dfish\x40v2\x2e1\x2e0
@@ -30,7 +32,7 @@ SETUVAR fish_color_option:a6e3a1
 SETUVAR fish_color_param:f2cdcd
 SETUVAR fish_color_quote:a6e3a1
 SETUVAR fish_color_redirection:f5c2e7
-SETUVAR fish_color_scheme:Catppuccin\x20Mocha
+SETUVAR --export fish_color_scheme:Catppuccin\x20Mocha
 SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d313244
 SETUVAR fish_color_selection:\x2d\x2dbackground\x3d313244
 SETUVAR fish_color_status:f38ba8
