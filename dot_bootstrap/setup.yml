@@ -8,6 +8,10 @@
       kewlfft.aur.aur:
         name: wl-clipboard
 
+    - name: Install package unzip
+      kewlfft.aur.aur:
+        name: unzip
+
     - name: Install package libnotify
       kewlfft.aur.aur:
         name: libnotify
@@ -63,3 +67,10 @@
     
     - name: Install Zathura
       import_tasks: zathura.yml
+
+    - name: Install package discord
+      kewlfft.aur.aur:
+        name: discord
+    
+    - name: Install Obsidian
+      import_tasks: obsidian.yml
