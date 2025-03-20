@@ -16,8 +16,7 @@ function M.lsp()
 		settings = {
 			python = {
 				analysis = {
-					diagnosticMode = "workspace",
-					typeCheckingMode = "basic",
+					typeCheckingMode = "off",
 				},
 			},
 		},
