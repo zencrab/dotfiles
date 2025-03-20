@@ -1,6 +1,6 @@
-- name: Install package tmux, tmux-plugin-manager, yq
+- name: Install package tmux, tmux-plugin-manager, go-yq
   kewlfft.aur.aur:
     name:
       - tmux
       - tmux-plugin-manager
-      - yq
+      - go-yq

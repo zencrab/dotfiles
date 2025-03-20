@@ -1,5 +1,3 @@
----
-# setup.yml
 - name: Setting up Arch Linux 
   hosts: localhost
   tasks:
@@ -74,3 +72,14 @@
     
     - name: Install Obsidian
       import_tasks: obsidian.yml
+
+    - name: Install package entr
+      kewlfft.aur.aur:
+        name: entr
+
+    - name: Install package spotify
+      kewlfft.aur.aur:
+        name: spotify
+
+    - name: Install SDKMAN!
+      import_tasks: sdkman.yml
