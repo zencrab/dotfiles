@@ -4,6 +4,11 @@ set fish_greeting
 # Theme
 set -Ux fish_color_scheme "Catppuccin Mocha"
 
+# Start or attach to tmux at start
+if command -v tmux >/dev/null && test -z "$TMUX"
+    exec tmux
+end
+
 # Set Neovim
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim

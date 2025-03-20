@@ -10,3 +10,6 @@ alias ll='ls --long'
 alias la='ls --all'
 alias tree='eza --tree --git-ignore --color=always --icons=auto'
 alias tree4='tree --level=4'
+
+# Python
+alias Python python
