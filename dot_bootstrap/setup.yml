@@ -2,6 +2,13 @@
   hosts: localhost
   tasks:
 
+    - name: Enable version color in for package manager (pacman, yay)
+      become: yes
+      replace:
+        path: /etc/pacman.conf
+        regexp: '^#Color'
+        replace: 'Color'
+
     - name: Install package wl-clipboard
       kewlfft.aur.aur:
         name: wl-clipboard
