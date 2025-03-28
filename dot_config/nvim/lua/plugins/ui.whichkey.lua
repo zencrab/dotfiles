@@ -4,7 +4,6 @@ return {
 	event = "LazyFile",
 
 	opts = {
-
 		win = {
 			border = "single",
 		},
