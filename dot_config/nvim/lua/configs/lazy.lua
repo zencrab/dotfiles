@@ -1,3 +1,4 @@
+--
 -- ensure lazy.nvim is installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -31,3 +32,6 @@ require("lazy").setup(plugins, {
 		},
 	},
 })
+
+vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
+
