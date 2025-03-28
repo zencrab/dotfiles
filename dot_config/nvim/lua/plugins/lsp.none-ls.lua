@@ -1,5 +1,9 @@
 return {
-	"nvimtools/none-ls.nvim",
+    "nvimtools/none-ls.nvim",
 
-	event = "LspAttach",
+    event = "LazyFile",
+
+    config = function()
+        require("configs.none-ls")
+    end,
 }
