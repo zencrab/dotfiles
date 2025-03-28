@@ -9,3 +9,4 @@ vim.lsp.enable("lua-language-server")
 vim.lsp.enable("pyright")
 vim.lsp.enable("marksman")
 vim.lsp.enable("ltex")
+
