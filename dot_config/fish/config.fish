@@ -9,10 +9,6 @@ if command -v tmux >/dev/null && test -z "$TMUX"
     exec tmux
 end
 
-# Set Neovim
-set -Ux EDITOR nvim
-set -Ux VISUAL nvim
-
 # Zoxide
 zoxide init fish | source
 
@@ -24,3 +20,7 @@ source ~/.config/fish/starship.fish
 
 # Conda
 source ~/.config/fish/conda.fish
+
+# Set Neovim as default editor 
+set -Ux EDITOR nvim
+set -Ux VISUAL nvim

@@ -1,6 +1,5 @@
 #!/bin/bash
 
 # dot_bootstrap directory hash: {{ include "dot_bootstrap/setup.yml" | sha256sum }}
-# test
 
 ansible-playbook -i {{ .chezmoi.sourceDir }}/dot_bootstrap/inventory.yml {{ .chezmoi.sourceDir }}/dot_bootstrap/setup.yml --ask-become-pass
