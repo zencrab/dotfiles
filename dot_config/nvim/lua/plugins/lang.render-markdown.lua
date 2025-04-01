@@ -1,7 +1,7 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
 
-	ft = { "markdown", "obsidian" },
+	ft = { "markdown" },
 
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
@@ -31,10 +31,9 @@ return {
 	},
 
 	---@module 'render-markdown'
-	---@diagnostic disable-next-line: undefined-doc-name
 	---@type render.md.UserConfig
 	opts = {
-		file_types = { "markdown", "obsidian" },
+		file_types = { "markdown" },
 		completitions = {
 			lsp = { enabled = true },
 		},

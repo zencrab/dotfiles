@@ -1,5 +1,4 @@
 return {
-
     "nvim-treesitter/nvim-treesitter",
 
     event = "LazyFile",
@@ -32,8 +31,5 @@ return {
                 enable = true,
             },
         })
-
-        vim.treesitter.language.register("markdown", "obsidian")
-        vim.treesitter.language.register("markdown_inline", "obsidian")
     end,
 }

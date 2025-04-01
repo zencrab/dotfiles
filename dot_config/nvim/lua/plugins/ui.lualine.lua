@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 
-    event = "LazyFile",
+	event = "LazyFile",
 
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 
