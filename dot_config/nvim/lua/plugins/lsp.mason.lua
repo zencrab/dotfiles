@@ -13,15 +13,13 @@ return {
                 package_uninstalled = " ",
             },
         },
-
     },
 
     keys = {
         {
             "<leader>M",
             "<cmd>Mason<CR>",
-            desc = "Open Mason"
-        }
-
-    }
+            desc = "Open Mason",
+        },
+    },
 }
