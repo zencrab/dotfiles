@@ -9,13 +9,12 @@ return {
 			transparent_background = true,
 
 			integrations = {
+                blink_cmp = true,
                 copilot_vim = true,
 				dashboard = true,
                 fidget = true,
 				gitsigns = true,
 				mason = true,
-				notify = true,
-				noice = true,
 				telescope = {
 					enabled = true,
 				},
