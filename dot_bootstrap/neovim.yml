@@ -26,8 +26,12 @@
       - fzf
       - cmake
 
-# Require by BufPreRead Autocommands and Mason.nvim
+# Require by BufPreRead, Autocommands, Mason.nvim
 - name: Install package nodejs
   kewlfft.aur.aur:
     name: nodejs
 
+# Required by codecompanion.nvim
+- name: Install package github-cli
+  kewlfft.aur.aur:
+    name: github-cli

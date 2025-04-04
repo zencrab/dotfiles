@@ -1,0 +1,12 @@
+- name: Install package texlive-binextra, texlive-basic, texlive-latex, texlive-latexrecommended, texlive-latexextra, texlive-fontsrecommended, texlive-fontsextra, texlive-bibtexextra, texlive-mathscience
+  kewlfft.aur.aur:
+    name:
+      - texlive-binextra
+      - texlive-basic
+      - texlive-latex
+      - texlive-latexrecommended
+      - texlive-latexextra
+      - texlive-fontsrecommended
+      - texlive-fontsextra
+      - texlive-bibtexextra
+      - texlive-mathscience
