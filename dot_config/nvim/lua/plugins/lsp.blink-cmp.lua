@@ -36,6 +36,8 @@ return {
 				"snippets",
 				"path",
 			},
+			per_filetype = {
+				codecompanion = { "codecompanion" },
 			},
 		},
 
