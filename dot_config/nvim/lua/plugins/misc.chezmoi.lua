@@ -1,23 +1,16 @@
 return {
-    'xvzc/chezmoi.nvim',
+    "xvzc/chezmoi.nvim",
 
-    event = "VeryLazy",
+    lazy = true,
 
-    dependencies = {
-        'nvim-lua/plenary.nvim',
-        "nvim-telescope/telescope.nvim",
-        "nvim-telescope/telescope-ui-select.nvim",
+    keys = {
+        {
+            "<leader>cz",
+            mode = "n",
+            function()
+                require("telescope").extensions.chezmoi.find_files()
+            end,
+            desc = "Chezmoi find files",
+        },
     },
-
-    config = function()
-        require("chezmoi").setup({})
-
-        -- Telescope extension
-        local telescope = require("telescope")
-        telescope.load_extension('chezmoi')
-
-        -- Keymaps
-        local map = vim.keymap.set
-        map('n', '<leader>cz', telescope.extensions.chezmoi.find_files, { desc = "Chezmoi find files" })
-    end
 }

@@ -21,7 +21,7 @@ return {
 
 	opts = {
 		keymaps = {
-			show_help = "<leader>h",
+			show_help = "<C-h>",
 		},
 
 		floating_window_scaling_factor = 0.8,

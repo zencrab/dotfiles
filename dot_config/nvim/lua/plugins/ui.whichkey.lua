@@ -1,7 +1,7 @@
 return {
 	"folke/which-key.nvim",
 
-	event = "LazyFile",
+	event = "VeryLazy",
 
 	opts = {
 		win = {
@@ -12,6 +12,7 @@ return {
 	keys = {
 		{
 			"<leader>?",
+            mode = "n",
 			function()
 				require("which-key").show({ global = false })
 			end,
