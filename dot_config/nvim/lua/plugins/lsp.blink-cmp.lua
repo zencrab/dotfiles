@@ -11,26 +11,22 @@ return {
 	---@module "blink_cmp"
 	---@type blink.cmp.Config
 	opts = {
-
 		completion = {
 			documentation = {
 				auto_show = true,
 			},
-			ghost_text = {
-				enabled = true,
+			menu = {
+				draw = {
+					columns = {
+						{ "kind_icon", "label", "label_description", gap = 1 },
+					},
+				},
 			},
-            menu= {
-                draw = {
-                    columns = {
-                        { "kind_icon", "label", "label_description", gap = 1 },
-                    }
-                }
-            },
 		},
 
-        signature = {
-            enabled = true,
-        },
+		signature = {
+			enabled = true,
+		},
 
 		sources = {
 			default = {
@@ -40,13 +36,14 @@ return {
 				"snippets",
 				"path",
 			},
+			},
 		},
 
 		fuzzy = {
 			implementation = "rust",
 		},
 
-        keymap = {
+		keymap = {
 			["<Tab>"] = { "select_next", "fallback" },
 			["<S-Tab>"] = { "select_prev", "fallback" },
 
@@ -62,7 +59,6 @@ return {
 
 			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 		},
-
 	},
 
 	opts_extend = {
