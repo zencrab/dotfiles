@@ -1,4 +1,4 @@
-- name: Setting up Arch Linux 
+- name: Setting up ArchLinux 
   hosts: localhost
   tasks:
 
@@ -94,3 +94,7 @@
 
     - name: Install SDKMAN!
       import_tasks: sdkman.yml
+
+    - name: Install TexLive 
+      import_tasks: texlive.yml
+
