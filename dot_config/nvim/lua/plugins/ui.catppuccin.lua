@@ -15,6 +15,10 @@ return {
                 fidget = true,
 				gitsigns = true,
 				mason = true,
+                snacks = {
+                    enabled = true,
+                    indent_scope_color = "blue",
+                },
 				telescope = {
 					enabled = true,
 				},
