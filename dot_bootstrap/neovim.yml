@@ -35,3 +35,10 @@
 - name: Install package github-cli
   kewlfft.aur.aur:
     name: github-cli
+
+- name: Install TexLab dependencies
+  kewlfft.aur.aur:
+    name:
+      - texlive-binextra
+      - perl-yaml-tiny
+      - perl-file-homedir
