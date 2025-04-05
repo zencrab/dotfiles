@@ -90,7 +90,7 @@ return {
 						get_lsp_status,
 						color = get_lsp_color,
 						on_click = function()
-							vim.cmd("LspInfo")
+							vim.cmd("checkhealth vim.lsp")
 						end,
 					},
 				},
