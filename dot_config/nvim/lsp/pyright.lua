@@ -1,18 +1,17 @@
 return {
-    cmd = { 'pyright-langserver', '--stdio' },
-    root_markers = { 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt', '.git' },
+	cmd = { "pyright-langserver", "--stdio" },
+	root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git" },
 
-    -- Filetype
-    filetypes = { "python" },
+	-- Filetype
+	filetypes = { "python" },
 
-    -- Specific settings
-    settings = {
-        python = {
-            analysis = {
-                diagnosticMode = "workspace",
-                typeCheckingMode = "basic",
-            },
-        },
-    },
-
+	-- Specific settings
+	settings = {
+		python = {
+			analysis = {
+				diagnosticMode = "workspace",
+				typeCheckingMode = "basic",
+			},
+		},
+	},
 }

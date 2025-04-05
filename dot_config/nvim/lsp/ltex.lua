@@ -1,15 +1,34 @@
 return {
-    cmd = { "ltex-ls" },
-    root_markers = { ".git", ".ltexrc", ".ltex" },
+	-- Command
+	cmd = { "ltex-ls" },
 
-    -- Filetype
-    filetypes = { "markdown", "tex", "text", "rst" },
+	-- Filetype
+	filetypes = {
+		"bib",
+		"gitcommit",
+		"markdown",
+		"org",
+		"plaintex",
+		"rst",
+		"rnoweb",
+		"tex",
+		"pandoc",
+		"quarto",
+		"rmd",
+		"context",
+		"html",
+		"xhtml",
+		"mail",
+		"text",
+	},
 
-    -- Specific settings
-    settings = {
-        ltex = {
-            language = "en-GB",
-            completiton = { enabled = true },
-        }
-    }
+	root_markers = { ".git", ".ltexrc", ".ltex" },
+
+	-- Specific settings
+	settings = {
+		ltex = {
+			language = "en-GB",
+			completiton = { enabled = true },
+		},
+	},
 }
