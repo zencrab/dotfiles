@@ -3,7 +3,9 @@ return {
 
 	event = "LazyFile",
 
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"echasnovski/mini.icons",
+	},
 
 	config = function()
 		local function get_color(color)
@@ -43,8 +45,11 @@ return {
 
 		local function get_file_icon_and_name()
 			local filename = vim.fn.expand("%:t")
+			if vim.bo.filetype == "codecompanion" then
+				return " " .. "CodeCompanion"
+			end
 			local ext = vim.fn.expand("%:e")
-			local icon = require("nvim-web-devicons").get_icon(filename, ext, { default = true })
+			local icon = require("mini.icons").get("extension", ext, { default = true })
 			return icon .. " " .. filename
 		end
 
@@ -57,7 +62,6 @@ return {
 				theme = "catppuccin",
 				section_separators = { left = "", right = "" },
 				component_separators = "",
-				ignore_focus = { "neo-tree" },
 				globalstatus = true,
 			},
 			sections = {

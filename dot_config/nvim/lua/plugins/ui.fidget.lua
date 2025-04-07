@@ -1,16 +1,16 @@
 return {
-    "j-hui/fidget.nvim",
+	"j-hui/fidget.nvim",
 
-    lazy = true,
+	lazy = false,
 
-    opts = {
-        notification = {
-            window = { winblend = 0 },
-            override_vim_notify = true,
-        },
-    },
+	opts = {
+		notification = {
+			window = { winblend = 0 },
+			override_vim_notify = true,
+		},
+	},
 
-    keys = {
-        { "<leader>fn", "<cmd>Telescope fidget<cr>", desc = "Find notifications" },
-    },
+	keys = {
+		{ "<leader>fn", "<cmd>Telescope fidget<cr>", desc = "Find notifications" },
+	},
 }

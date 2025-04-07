@@ -16,7 +16,7 @@ return {
 
 	keys = {
 		{
-			"<M-e>",
+			"<C-e>",
 			mode = "i",
 			function()
 				require("copilot.suggestion").accept()
@@ -24,7 +24,7 @@ return {
 			desc = "Copilot accept suggestion",
 		},
 		{
-			"<M-n>",
+			"<C-]>",
 			mode = "i",
 			function()
 				require("copilot.suggestion").next()
@@ -32,7 +32,7 @@ return {
 			desc = "Copilot next suggestion",
 		},
 		{
-			"<M-p>",
+			"<C-[>",
 			mode = "i",
 			function()
 				require("copilot.suggestion").prev()
