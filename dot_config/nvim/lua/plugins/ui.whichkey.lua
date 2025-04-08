@@ -16,7 +16,7 @@ return {
 			function()
 				require("which-key").show({ global = false })
 			end,
-			desc = "WhichKey show all keymaps",
+			desc = "All keymaps",
 		},
 	},
 }

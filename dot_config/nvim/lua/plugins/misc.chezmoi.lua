@@ -1,7 +1,9 @@
 return {
     "xvzc/chezmoi.nvim",
 
-    lazy = true,
+    opts = {
+
+    },
 
     keys = {
         {

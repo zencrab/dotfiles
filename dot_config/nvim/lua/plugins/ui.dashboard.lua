@@ -4,7 +4,7 @@ return {
     event = "VimEnter",
 
     dependencies = {
-        "nvim-tree/nvim-web-devicons",
+        -- "nvim-tree/nvim-web-devicons",
     },
 
     opts = {
