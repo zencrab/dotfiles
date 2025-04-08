@@ -82,6 +82,10 @@ return {
 				},
 
 				lualine_c = {
+					{ require("NeoComposer.ui").status_recording },
+				},
+
+				lualine_d = {
 					"%=",
 					{
 						"diff",
