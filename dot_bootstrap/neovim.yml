@@ -36,9 +36,15 @@
   kewlfft.aur.aur:
     name: github-cli
 
-- name: Install TexLab dependencies
+- name: Install TexLab dependencies (texlive-binextra, perl-yaml-tiny, perl-file-homedir)
   kewlfft.aur.aur:
     name:
       - texlive-binextra
       - perl-yaml-tiny
       - perl-file-homedir
+
+- name: Install VimTex dependencies (biber, xdotool)
+  kewlfft.aur.aur:
+    name:
+      - biber
+      - xdotool

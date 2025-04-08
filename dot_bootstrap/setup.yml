@@ -1,4 +1,4 @@
-- name: Setting up ArchLinux 
+- name: Setting up Arch Linux 
   hosts: localhost
   tasks:
 

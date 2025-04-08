@@ -28,9 +28,6 @@ map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 -- quit highlighting (e.g. search highlights)
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "Clear highlights" })
 
--- save file
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
-
 -- copy
 map("x", "<C-c>", '"+y', { desc = "Copy lines" })
 map("n", "<C-c>", '"+yy', { desc = "Copy lines" })
@@ -38,47 +35,47 @@ map("i", "<C-c>", '<esc>"+yygi', { desc = "Copy lines" })
 
 -- duplicate
 local function duplicate_line_or_selection()
-    local mode = vim.fn.mode()
+	local mode = vim.fn.mode()
 
-    local start_line, end_line
+	local start_line, end_line
 
-    if mode == "n" then
-        -- Normal mode: duplicate current line
-        start_line = vim.fn.line(".")
-        end_line = start_line
-    elseif mode == "v" then
-        -- Visual mode: duplicate selected lines
-        start_line = vim.fn.line("v")
-        end_line = vim.fn.line(".")
+	if mode == "n" then
+		-- Normal mode: duplicate current line
+		start_line = vim.fn.line(".")
+		end_line = start_line
+	elseif mode == "v" then
+		-- Visual mode: duplicate selected lines
+		start_line = vim.fn.line("v")
+		end_line = vim.fn.line(".")
 
-        if start_line > end_line then
-            start_line, end_line = end_line, start_line
-        end
-    else
-        return
-    end
+		if start_line > end_line then
+			start_line, end_line = end_line, start_line
+		end
+	else
+		return
+	end
 
-    -- Get the lines
-    local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
+	-- Get the lines
+	local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
 
-    -- Append them directly
-    vim.api.nvim_buf_set_lines(0, end_line, end_line, false, lines)
+	-- Append them directly
+	vim.api.nvim_buf_set_lines(0, end_line, end_line, false, lines)
 
-    if mode == "n" then
-        vim.cmd("normal! j")
-    end
+	if mode == "n" then
+		vim.cmd("normal! j")
+	end
 
-    -- In visual mode, reselect the new block
-    if mode == "v" then
-        vim.cmd("normal! gv")
-    end
+	-- In visual mode, reselect the new block
+	if mode == "v" then
+		vim.cmd("normal! gv")
+	end
 end
 
-map("n", "<leader>dd", duplicate_line_or_selection, { desc = "Duplicate line" })
-map("v", "<leader>dd", duplicate_line_or_selection, { desc = "Duplicate selection" })
+map("n", "<leader>dl", duplicate_line_or_selection, { desc = "Duplicate line" })
+map("v", "<leader>dl", duplicate_line_or_selection, { desc = "Duplicate lines" })
 
 -- ---------------------------------- LSP --------------------------------------
-map("n", "<leader>li", "<cmd>checkhealth lsp<CR>", {desc = "LSP info"})
+map("n", "<leader>li", "<cmd>checkhealth lsp<CR>", { desc = "LSP info" })
 map("n", "<leader>lh", vim.lsp.buf.hover, { desc = "Hover code" })
 map("n", "<leader>lr", vim.lsp.buf.rename, { desc = "Rename code" })
 map("n", "<leader>ld", vim.lsp.buf.declaration, { desc = "Code go to declaration" })
@@ -91,6 +88,6 @@ map({ "n", "v" }, "<leader>lc", vim.lsp.buf.code_action, { desc = "Code actions"
 map("n", "<leader>lwa", vim.lsp.buf.add_workspace_folder, { desc = "Code add workspace folder" })
 map("n", "<leader>lwr", vim.lsp.buf.remove_workspace_folder, { desc = "Code remove workspace folder" })
 map("n", "<leader>lwl", function()
-    vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()), vim.log.levels.INFO)
+	vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()), vim.log.levels.INFO)
 end, { desc = "Code list workspace folders" })
 map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Code format document" })

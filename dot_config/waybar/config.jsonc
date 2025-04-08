@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
 	"layer": "top",
-    "margin": "4 4 4 4",
+    "margin": "2 4 2 4",
 	"reload_syle_on_change": true,
 	"modules-left": [
 		"hyprland/workspaces"
