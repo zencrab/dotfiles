@@ -1,18 +1,21 @@
 return {
-    "xvzc/chezmoi.nvim",
+	"xvzc/chezmoi.nvim",
+	event = "VeryLazy",
 
-    opts = {
+	opts = {
+		edit = {
+			watch = true,
+		},
+	},
 
-    },
-
-    keys = {
-        {
-            "<leader>cz",
-            mode = "n",
-            function()
-                require("telescope").extensions.chezmoi.find_files()
-            end,
-            desc = "Chezmoi find files",
-        },
-    },
+	keys = {
+		{
+			"<leader>cz",
+			mode = "n",
+			function()
+				require("telescope").extensions.chezmoi.find_files()
+			end,
+			desc = "Chezmoi find files",
+		},
+	},
 }
