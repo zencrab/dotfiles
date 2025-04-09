@@ -36,6 +36,10 @@ return {
 			-- Latex
 			"texlab",
 
+			-- Nix
+			"nil",
+			"nixfmt",
+
 			-- Spelling
 			"ltex-ls",
 		},

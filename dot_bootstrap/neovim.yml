@@ -27,9 +27,12 @@
       - cmake
 
 # Require by BufPreRead, Autocommands, Mason.nvim
-- name: Install package nodejs
+- name: Install Mason.nvim dependencies (nodejs, docker, rustup) 
   kewlfft.aur.aur:
-    name: nodejs
+    name: 
+      - nodejs
+      - docker
+      - rustup
 
 # Required by codecompanion.nvim
 - name: Install package github-cli
