@@ -4,27 +4,30 @@ return {
 
 	priority = 1000,
 
-	config = function()
-		require("catppuccin").setup({
-			transparent_background = true,
+	opts = {
+		flavour = "mocha",
 
-			integrations = {
-                blink_cmp = true,
-                copilot_vim = true,
-				dashboard = true,
-                fidget = true,
-				gitsigns = true,
-				mason = true,
-                snacks = {
-                    enabled = true,
-                    indent_scope_color = "blue",
-                },
-				telescope = {
-					enabled = true,
-				},
-				which_key = true,
+		transparent_background = true,
+
+		integrations = {
+			blink_cmp = true,
+			fidget = true,
+			mason = true,
+            mini = {
+                enabled = true,
+                indentscope_color = "blue",
+            },
+
+			snacks = {
+				enabled = true,
+				indent_scope_color = "blue",
 			},
-		})
+			which_key = true,
+		},
+	},
+
+	config = function(_, opts)
+		require("catppuccin").setup(opts)
 
 		-- setup must be called before loading
 		vim.cmd.colorscheme("catppuccin")

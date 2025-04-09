@@ -2,6 +2,10 @@ return {
 	"nvimdev/dashboard-nvim",
 	event = "VimEnter",
 
+	dependencies = {
+		"RileyGabrielson/inspire.nvim",
+	},
+
 	opts = {
 		theme = "hyper",
 		shortcut_type = "number",
@@ -54,10 +58,13 @@ return {
 					key = "c",
 				},
 			},
-			footer = {
-				"",
-				"  Neovim",
-			},
+			footer = function()
+				local inspire = require("inspire")
+				local quote = inspire.get_quote()
+
+				-- Add an empty line at the beginning and return the centered text
+				return vim.list_extend({ "", "" }, inspire.center_text(quote.text, quote.author, 80, 8, 80))
+			end,
 		},
 	},
 }
