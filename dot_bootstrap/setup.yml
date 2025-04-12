@@ -136,8 +136,8 @@
       kewlfft.aur.aur:
         name: spotify
 
-    - name: Install SDKMAN!
-      import_tasks: sdkman.yml
+    - name: Install asdf
+      import_tasks: asdf.yml
 
     - name: Install TexLive
       import_tasks: texlive.yml
