@@ -18,6 +18,9 @@ return {
 		},
 
 		ensure_installed = {
+            -- JSON
+            "json-lsp",
+
 			-- Latex
 			"texlab",
 
@@ -42,6 +45,9 @@ return {
 
 			-- Spelling
 			"ltex-ls",
+
+            -- TOML
+            "taplo",
 
             -- YAML
             "yaml-language-server",

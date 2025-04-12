@@ -18,7 +18,7 @@ return {
 			},
 		},
 		yaml = {
-			valiedate = true,
+			validate = true,
 			format = {
 				enable = true,
 			},

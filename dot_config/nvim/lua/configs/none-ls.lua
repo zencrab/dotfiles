@@ -16,9 +16,9 @@ none_ls.setup({
 		}),
 
 		-- Nix
-		none_ls.builtins.formatting.nixfmt.with({
-			filetypes = { "nix" },
-		}),
+		-- none_ls.builtins.formatting.nixfmt.with({
+		-- 	filetypes = { "nix" },
+		-- }),
 
 		-- Python
 		none_ls.builtins.diagnostics.mypy.with({
