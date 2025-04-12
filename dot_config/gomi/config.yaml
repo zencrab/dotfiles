@@ -1,0 +1,102 @@
+# Controls the core functionality of gomi's trash operations.
+core:
+  trash:
+    strategy: auto      # or "xdg" or "legacy"
+                        # Strategy determines which trash specification to use.
+
+    gomi_dir: ~/.gomi   # Path to store trashed files. Can be changed to another location.
+                        # Supports environment variable expansion like $HOME or ~.
+                        # If empty, defaults to ~/.gomi.
+                        # This config is only available on "legacy", "auto" trash strategy
+
+    home_fallback: true # If true, fallbacks to home trash when external trash fails
+
+    forbidden_paths:    # List of paths that cannot be moved to trash for safety
+      - "$HOME/.local/share/Trash"
+      - "$HOME/.trash"
+      - "$XDG_DATA_HOME/Trash"
+      - "/tmp/Trash"
+      - "/var/tmp/Trash"
+      - "$HOME/.gomi"
+      - "/"
+      - "/etc"
+      - "/usr"
+      - "/var"
+      - "/bin"
+      - "/sbin"
+      - "/lib"
+      - "/lib64"
+
+  restore:
+    confirm: false      # If true, prompts for confirmation before restoring (yes/no)
+    verbose: true       # If true, displays detailed restoration information
+
+  permanent_delete:
+    enable: true        # If true, enables permanent deletion of files from trash.
+                        # When enabled, files can be deleted permanently using the 'D' key.
+                        # This operation is irreversible and bypasses the trash.
+                        # Default is false for safety.
+
+# Customizes the interactive interface used during file restoration.
+ui:
+  density: spacious     # or "compact"
+                        # Density determines the space between elements.
+
+  style:
+    list_view:
+      indent_on_select: true
+      cursor: '#89b4fa'
+      selected: '#a6e3a1'
+
+    detail_view:
+      border: '#9399b2'
+      info_pane:
+        deleted_from:
+          fg: '#b4befe'
+          bg: '#1e1e2e'
+        deleted_at:
+          fg: '#b4befe'
+          bg: '#1e1e2e'
+      preview_pane:
+        border: '#7f849c'
+        size:
+          fg: '#89b4fa'
+          bg: '#1e1e2e'
+        scroll:
+          fg: '#89b4fa'
+          bg: '#1e1e2e'
+
+    deletion_dialog: '#f38ba8'
+
+  exit_message: ""      # Message to be shown after leaving gomi
+
+  preview:
+    syntax_highlight: true
+    colorscheme: catppuccin-mocha
+    directory_command: ls -GF -1 -A --color=always
+
+  paginator_type: arabic  # or "dots"
+                          # The style of the pagination.
+
+# Configures which files appear in the restoration list.
+history:
+  include:
+    within_days: 100 # Only show files deleted in the last 100 days
+  exclude:
+    files:
+    - .DS_Store      # Exclude .DS_Store files
+    patterns:
+    - "^go\\..*"     # Exclude files starting with "go."
+    globs:
+    - "*.jpg"        # Exclude JPEG files
+    size:
+      min: 0KB       # Exclude empty files
+      max: 10GB      # Exclude files larger than 10GB
+
+# Enables debugging and operation logging for gomi.
+logging:
+  enabled: false     # Enable/disable logging
+  level: info        # Available levels: debug, info, warn, error
+  rotation:
+    max_size: 10MB   # Maximum size of each log file
+    max_files: 3     # Number of old log files to retain

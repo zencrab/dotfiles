@@ -93,6 +93,10 @@
     - name: Install Bat
       import_tasks: bat.yml
 
+    - name: Install package gomi
+      kewlfft.aur.aur:
+        name: gomi
+
     # --------------------------------- UTILITIES ----------------------------------
     - name: Install package unzip
       kewlfft.aur.aur:
