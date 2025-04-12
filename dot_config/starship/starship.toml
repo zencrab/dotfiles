@@ -38,7 +38,7 @@ ahead = '[ ${count}](green)'
 behind = '[ ${count}](red)'
 diverged = '[ ${ahead_count}  ${behind_count}](yellow)'
 
-conflicted = '[ ](yellow) '
+conflicted = '[ ${count}](yellow) '
 untracked = '[?${count}](text) '
 modified = '[~${count}](peach) '
 renamed = ''
