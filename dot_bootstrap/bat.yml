@@ -1,6 +1,4 @@
----
-# bat.yml
-- name: Install package bat, bat-extras 
+- name: Install package bat, bat-extras
   kewlfft.aur.aur:
     name:
       - bat

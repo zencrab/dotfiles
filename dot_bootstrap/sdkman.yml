@@ -12,7 +12,7 @@
       - zip
       - unzip
 
-- name: Install SDKMAN! 
+- name: Install SDKMAN!
   become: no
   shell: "curl -s 'https://get.sdkman.io' | bash"
   args:

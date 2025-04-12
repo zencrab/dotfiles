@@ -1,5 +1,3 @@
----
-# zathura.yml
 - name: Install package zathura, zathura-pdf-poppler
   kewlfft.aur.aur:
     name:

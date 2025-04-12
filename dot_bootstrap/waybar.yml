@@ -5,4 +5,3 @@
 - name: Install package brightnessctl
   kewlfft.aur.aur:
     name: brightnessctl
-

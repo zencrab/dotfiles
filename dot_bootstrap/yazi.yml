@@ -11,4 +11,3 @@
   command: "ya pack -a yazi-rs/flavors:catppuccin-mocha"
   args:
     creates: "{{ ansible_env.HOME }}/.config/yazi/flavors/catppuccin-mocha.yazi"
-

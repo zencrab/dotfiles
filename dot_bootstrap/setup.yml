@@ -1,35 +1,68 @@
-- name: Setting up ArchLinux 
+- name: Setting up Arch Linux
   hosts: localhost
   tasks:
-
+    # ------------------------------ PACKAGE MANAGER -------------------------------
     - name: Enable version color in for package manager (pacman, yay)
       become: yes
       replace:
         path: /etc/pacman.conf
-        regexp: '^#Color'
-        replace: 'Color'
+        regexp: "^#Color"
+        replace: "Color"
 
+    # ----------------------------- OPERATING SYSTEM -------------------------------
     - name: Install package wl-clipboard
       kewlfft.aur.aur:
         name: wl-clipboard
-
-    - name: Install package unzip
-      kewlfft.aur.aur:
-        name: unzip
 
     - name: Install package libnotify
       kewlfft.aur.aur:
         name: libnotify
 
-    - name: Install package python-dbus, networkmanager 
-      kewlfft.aur.aur:
-        name: 
-          - python-dbus
-          - networkmanager
+    # ---------------------------- DESKTOP ENVIRONMENT -----------------------------
+    - name: Install Waybar
+      import_tasks: waybar.yml
 
-    - name: Install package zen-browser-bin
+    - name: Install package hyprpaper
       kewlfft.aur.aur:
-        name: zen-browser-bin
+        name: hyprpaper
+
+    - name: Install package hyprlock
+      kewlfft.aur.aur:
+        name: hyprlock
+
+    - name: Install package hyprshot
+      kewlfft.aur.aur:
+        name: hyprshot
+
+    # ---------------------------------- DAEMON ------------------------------------
+    # auto-cpufreq
+    - name: Install package auto-cpufreq
+      kewlfft.aur.aur:
+        name: auto-cpufreq
+
+    - name: Enable auto-cpufreq.service
+      ansible.builtin.systemd_service:
+        name: auto-cpufreq.service
+        enabled: true
+      become: yes
+
+    - name: Start auto-cpufreq.service
+      ansible.builtin.systemd_service:
+        name: auto-cpufreq
+        state: started
+      become: yes
+
+    # ---------------------------------- NETWORK -----------------------------------
+    - name: Install package networkmanager, python-dbus
+      kewlfft.aur.aur:
+        name:
+          - networkmanager
+          - python-dbus
+
+    # --------------------------------- TERMINAL -----------------------------------
+    - name: Install package fastfetch
+      kewlfft.aur.aur:
+        name: fastfetch
 
     - name: Install Fish
       import_tasks: fish.yml
@@ -43,22 +76,16 @@
     - name: Install Bat
       import_tasks: bat.yml
 
-    - name: Install Waybar
-      import_tasks: waybar.yml
-
-    - name: Install package hyprpaper
+    # --------------------------------- UTILITIES ----------------------------------
+    - name: Install package unzip
       kewlfft.aur.aur:
-        name: hyprpaper
+        name: unzip
 
-    - name: Install package hyprlock
+    - name: Install package zen-browser-bin
       kewlfft.aur.aur:
-        name: hyprlock
+        name: zen-browser-bin
 
-    - name: Install package hyprshot 
-      kewlfft.aur.aur:
-        name: hyprshot
-
-    - name: Install Conda 
+    - name: Install Conda
       import_tasks: conda.yml
 
     - name: Install Jupyter Lab
@@ -70,17 +97,17 @@
     - name: Install Yazi
       import_tasks: yazi.yml
 
-    - name: Install package lazygit 
+    - name: Install package lazygit
       kewlfft.aur.aur:
         name: lazygit
-    
+
     - name: Install Zathura
       import_tasks: zathura.yml
 
     - name: Install package discord
       kewlfft.aur.aur:
         name: discord
-    
+
     - name: Install Obsidian
       import_tasks: obsidian.yml
 
@@ -95,6 +122,5 @@
     - name: Install SDKMAN!
       import_tasks: sdkman.yml
 
-    - name: Install TexLive 
+    - name: Install TexLive
       import_tasks: texlive.yml
-

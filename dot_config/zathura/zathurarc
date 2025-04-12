@@ -1,9 +1,15 @@
 # Zathura configuration file
 # See man `man zathurarc'
 
+# Include theme
+include catppuccin-mocha
+
 # Open document in fit-width mode by default
 set window-title-basename true
 set adjust-open "best-fit"
+
+# Set recolor to false
+set recolor false
 
 # One page per row by default
 set pages-per-row 1
@@ -23,5 +29,3 @@ unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
-# Include theme
-include catppuccin-mocha
