@@ -35,6 +35,23 @@
         name: hyprshot
 
     # ---------------------------------- DAEMON ------------------------------------
+    # batsignal
+    - name: Install package batsignal
+      kewlfft.aur.aur:
+        name: batsignal
+
+    - name: Enable batsignal.service
+      ansible.builtin.systemd_service:
+        name: batsignal.service
+        enabled: true
+        scope: user
+
+    - name: Start batsignal.service
+      ansible.builtin.systemd_service:
+        name: batsignal.service
+        state: started
+        scope: user
+
     # auto-cpufreq
     - name: Install package auto-cpufreq
       kewlfft.aur.aur:
