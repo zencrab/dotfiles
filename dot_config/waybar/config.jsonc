@@ -15,7 +15,6 @@
         "battery",
         "clock"
     ],
-    //Modules configuration
     "hyprland/window": {
         "format": "{initialTitle}",
         "rewrite": {
@@ -52,7 +51,6 @@
         },
         "modules": [
             "custom/expand",
-            "custom/pacman",
             "cpu",
             "temperature",
             "memory",
@@ -60,15 +58,6 @@
             "pulseaudio",
             "custom/endpoint"
         ]
-    },
-    "custom/pacman": {
-        "format": "󰅢   {}",
-        "interval": "30",
-        "exec": "yay -Qu | wc -l",
-        "exec-if": "exit 0",
-        "on-click": "kitty sh ~/.scripts/update_packages.sh",
-        "signal": 8,
-        "tooltip": false
     },
     "cpu": {
         "format": "󰍛  {usage}%",
@@ -120,7 +109,7 @@
             " ",
             " "
         ],
-        "format-time": "{H}h {M}m",
+        "format-time": "{H}h {M}m"
     },
     "clock": {
         "format": "{:%H:%M} ",
