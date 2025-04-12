@@ -2,6 +2,7 @@
   hosts: localhost
   tasks:
 
+# ------------------------------ PACKAGE MANAGER -------------------------------
     - name: Enable version color in for package manager (pacman, yay)
       become: yes
       replace:
@@ -9,39 +10,19 @@
         regexp: '^#Color'
         replace: 'Color'
 
+# ----------------------------- OPERATING SYSTEM -------------------------------
     - name: Install package wl-clipboard
       kewlfft.aur.aur:
         name: wl-clipboard
-
-    - name: Install package unzip
-      kewlfft.aur.aur:
-        name: unzip
 
     - name: Install package libnotify
       kewlfft.aur.aur:
         name: libnotify
 
-    - name: Install package python-dbus, networkmanager 
+# ---------------------------- DESKTOP ENVIRONMENT -----------------------------
+    - name: Install package unzip
       kewlfft.aur.aur:
-        name: 
-          - python-dbus
-          - networkmanager
-
-    - name: Install package zen-browser-bin
-      kewlfft.aur.aur:
-        name: zen-browser-bin
-
-    - name: Install Fish
-      import_tasks: fish.yml
-
-    - name: Install Neovim
-      import_tasks: neovim.yml
-
-    - name: Install Tmux
-      import_tasks: tmux.yml
-
-    - name: Install Bat
-      import_tasks: bat.yml
+        name: unzip
 
     - name: Install Waybar
       import_tasks: waybar.yml
@@ -57,6 +38,71 @@
     - name: Install package hyprshot 
       kewlfft.aur.aur:
         name: hyprshot
+
+# ---------------------------------- DAEMON ------------------------------------
+    # batsignal
+    - name: Install package batsignal 
+      kewlfft.aur.aur:
+        name: batsignal
+
+    - name: Enable batsignal.service
+      ansible.builtin.systemd_service:
+        name: batsignal.service
+        enabled: true
+        scope: user
+
+    - name: Start batsignal.service 
+      ansible.builtin.systemd_service:
+        name: batsignal.service
+        state: started
+        scope: user
+
+    # auto-cpufreq
+    - name: Install package auto-cpufreq
+      kewlfft.aur.aur:
+        name: auto-cpufreq
+
+    - name: Enable auto-cpufreq.service
+      ansible.builtin.systemd_service:
+        name: auto-cpufreq.service
+        enabled: true
+      become: yes
+
+    - name: Start auto-cpufreq.service
+      ansible.builtin.systemd_service:
+        name: auto-cpufreq
+        state: started
+      become: yes
+      
+# ---------------------------------- NETWORK -----------------------------------
+    - name: Install package python-dbus, networkmanager 
+      kewlfft.aur.aur:
+        name: 
+          - python-dbus
+          - networkmanager
+
+# --------------------------------- TERMINAL -----------------------------------
+    # --------------------------------- TERMINAL -----------------------------------
+    - name: Install package fastfetch
+      kewlfft.aur.aur:
+        name: fastfetch
+
+# --------------------------------- UTILITIES ----------------------------------
+    - name: Install package zen-browser-bin
+      kewlfft.aur.aur:
+        name: zen-browser-bin
+
+    - name: Install Fish
+      import_tasks: fish.yml
+
+    - name: Install Neovim
+      import_tasks: neovim.yml
+
+    - name: Install Tmux
+      import_tasks: tmux.yml
+
+    - name: Install Bat
+      import_tasks: bat.yml
 
     - name: Install Conda 
       import_tasks: conda.yml
@@ -98,3 +144,6 @@
     - name: Install TexLive 
       import_tasks: texlive.yml
 
+    - name: Install Solanum
+      kewlfft.aur.aur:
+        name: solanum
