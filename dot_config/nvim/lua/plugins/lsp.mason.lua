@@ -18,9 +18,21 @@ return {
 		},
 
 		ensure_installed = {
+			-- Latex
+			"texlab",
+
 			-- Lua
 			"lua-language-server",
 			"stylua",
+
+			-- Markdown
+			"marksman",
+			"markdownlint",
+			"prettier",
+
+			-- Nix
+			-- "nil",
+			-- "nixfmt",
 
 			-- Python
 			"pyright",
@@ -28,20 +40,11 @@ return {
 			"isort",
 			"mypy",
 
-			-- Markdown
-			"marksman",
-			"markdownlint",
-			"prettier",
-
-			-- Latex
-			"texlab",
-
-			-- Nix
-			"nil",
-			"nixfmt",
-
 			-- Spelling
 			"ltex-ls",
+
+            -- YAML
+            "yaml-language-server",
 		},
 	},
 	opts_extend = {
