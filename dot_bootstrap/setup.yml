@@ -82,6 +82,7 @@
           - networkmanager
 
 # --------------------------------- TERMINAL -----------------------------------
+    # --------------------------------- TERMINAL -----------------------------------
     - name: Install package fastfetch
       kewlfft.aur.aur:
         name: fastfetch
