@@ -16,6 +16,7 @@
         "clock"
     ],
     "hyprland/window": {
+        "icon": true,
         "format": "{initialTitle}",
         "rewrite": {
             "kitty": "Terminal",
@@ -60,11 +61,11 @@
         ]
     },
     "cpu": {
-        "format": "󰍛  {usage}%",
+        "format": "  {usage}%",
         "tooltip": true
     },
     "memory": {
-        "format": "   {percentage}%"
+        "format": "  {percentage}%"
     },
     "temperature": {
         "critical-threshold": 80,

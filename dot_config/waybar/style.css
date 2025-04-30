@@ -9,7 +9,7 @@
 window#waybar {
     background: @base;
     border: 2px solid @blue;
-    border-radius: 6;
+    border-radius: 6px;
 
 }
 
@@ -19,7 +19,7 @@ window#waybar {
 
 .modules-center {
     color: @text;
-    padding: 0 15;
+    padding: 0px 15px;
 }
 
 .modules-right {

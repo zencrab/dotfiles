@@ -18,6 +18,9 @@
       kewlfft.aur.aur:
         name: libnotify
 
+    - name: Install Bluetooth
+      import_tasks: bluetooth.yaml
+
     # ---------------------------- DESKTOP ENVIRONMENT -----------------------------
     - name: Install Waybar
       import_tasks: waybar.yml

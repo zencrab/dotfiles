@@ -1,0 +1,19 @@
+- name: Install packages (bluez, bluez-utils, bluetui)
+  kewlfft.aur.aur:
+    name:
+      - bluez 
+      - bluez-utils
+      - bluetui
+
+- name: Enable bluetooth.service
+  ansible.builtin.systemd_service:
+    name: bluetooth.service
+    enabled: true
+  become: yes
+
+- name: Start bluetooth.service
+  ansible.builtin.systemd_service:
+    name: bluetooth.service
+    state: started
+  become: yes
+
