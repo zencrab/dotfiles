@@ -2,6 +2,8 @@ return {
 	"ecthelionvi/NeoComposer.nvim",
     lazy = true,
 
+    enabled = false,
+
 	dependencies = {
 		"kkharji/sqlite.lua",
 	},

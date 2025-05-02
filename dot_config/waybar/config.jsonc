@@ -65,7 +65,7 @@
         "tooltip": true
     },
     "memory": {
-        "format": "  {percentage}%"
+        "format": "   {percentage}%"
     },
     "temperature": {
         "critical-threshold": 80,
@@ -99,9 +99,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}%",
-        "format-full": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
+        "format": "{icon}  {capacity}%",
+        "format-full": "   {capacity}%",
+        "format-plugged": "   {capacity}%",
         "format-charging": "  {capacity}%",
         "format-icons": [
             " ",

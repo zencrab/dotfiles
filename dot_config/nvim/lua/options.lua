@@ -29,8 +29,8 @@ end)
 
 -- ---------------------------------- UI ---------------------------------------
 
--- Floating window border
-vim.o.winborder = "rounded"
+-- Floating window border (<= Neovim 0.11)
+-- vim.o.winborder = "rounded"
 
 -- Conceal lines (Markdown, LaTex)
 vim.opt.conceallevel = 2
