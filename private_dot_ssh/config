@@ -2,4 +2,4 @@ Host github.com
     HostName github.com
     User git
     AddKeysToAgent yes
-    IdentityFile ~/.ssh/zencrab
+    IdentityFile ~/.ssh/id_ed25519
