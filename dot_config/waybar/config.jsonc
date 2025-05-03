@@ -20,12 +20,10 @@
         "format": "{initialTitle}",
         "rewrite": {
             "kitty": "Terminal",
-            "(.*)Discord": "Discord",
-            "(.*)http://localhost:8888(.*)": "Jupyter Lab",
-            "(.*)qutebrowser(.*)": "QuteBrowser"
         },
         "max-length": 100,
-        "icon-size": 20
+        "icon-size": 20,
+        "tooltip": false
     },
     "hyprland/workspaces": {
         "format": "{name}",
@@ -38,10 +36,6 @@
                 5
             ]
         }
-    },
-    "custom/expand": {
-        "format": "",
-        "tooltip": false
     },
     "group/expand": {
         "orientation": "horizontal",
@@ -61,7 +55,7 @@
         ]
     },
     "cpu": {
-        "format": "  {usage}%",
+        "format": "   {usage}%",
         "tooltip": true
     },
     "memory": {
@@ -69,7 +63,7 @@
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": " {temperatureC}°C",
+        "format": "  {temperatureC}°C",
         "tooltip": false
     },
     "tray": {
@@ -77,7 +71,11 @@
         "spacing": 10
     },
     "custom/endpoint": {
-        "format": "|",
+        "format": "",
+        "tooltip": false
+    },
+    "custom/expand": {
+        "format": "",
         "tooltip": false
     },
     "network": {
@@ -100,7 +98,7 @@
             "critical": 15
         },
         "format": "{icon}  {capacity}%",
-        "format-full": "   {capacity}%",
+        "format-full": " {capacity}%",
         "format-plugged": "   {capacity}%",
         "format-charging": "  {capacity}%",
         "format-icons": [
@@ -119,7 +117,7 @@
     },
     "backlight": {
         "device": "acpi_video1",
-        "format": " {}%",
+        "format": "  {}%",
         "tooltip": false
     },
     "pulseaudio": {

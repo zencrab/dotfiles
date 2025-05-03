@@ -14,82 +14,47 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
--- Automatic LSP severs setup
--- require("mason-lspconfig").setup_handlers({
--- 	-- Default handler (ought to be the first one).
--- 	function(server_name)
--- 		vim.lsp.config(server_name, {})
--- 		vim.lsp.enable(server_name)
--- 	end,
---
--- 	-- Custom handler for specific server.
--- 	["jsonls"] = function()
--- 		require("lspconfig").jsonls.setup({
--- 			init_options = {
--- 				provideFormatter = true,
--- 			},
--- 		})
--- 	end,
--- 	["ltex"] = function()
--- 		require("lspconfig").ltex.setup({
--- 			root_markers = { ".git", ".ltexrc", ".ltex" },
--- 			settings = {
--- 				ltex = {
--- 					language = "en-GB",
--- 					completion = { enabled = true },
--- 				},
--- 			},
--- 		})
--- 	end,
--- 	["lua_ls"] = function()
--- 		vim.lsp.config("lua_ls", {
--- 			settings = {
--- 				Lua = {
--- 					diagnostics = {
--- 						globals = { "vim" },
--- 					},
--- 				},
--- 			},
--- 		})
--- 		vim.lsp.enable("lua_ls")
--- 	end,
--- 	["pyright"] = function()
--- 		vim.lsp.config("pyright", {
--- 			settings = {
--- 				python = {
--- 					analysis = {
--- 						diagnosticMode = "workspace",
--- 						typeCheckingMode = "basic",
--- 					},
--- 				},
--- 			},
--- 		})
---         vim.lsp.enable("pyright")
--- 	end,
--- 	["yamlls"] = function()
--- 		require("lspconfig").yamlls.setup({
--- 			settings = {
--- 				redhat = {
--- 					telemetry = {
--- 						enabled = false,
--- 					},
--- 				},
--- 				yaml = {
--- 					validate = true,
--- 					format = {
--- 						enable = true,
--- 					},
--- 					schemaStore = {
--- 						enable = true,
--- 					},
--- 				},
--- 			},
--- 		})
--- 	end,
---
---     ["ts_ls"] = function()
---         require("lspconfig").ts_ls.setup({
---
---         })
---     end,
--- })
+
+-- Lua Language Sever
+vim.lsp.config('lua_ls', {
+    cmd = { "lua-lsp" },
+
+    filetypes = { "lua" },
+    
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if
+        path ~= vim.fn.stdpath('config')
+        and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+      then
+        return
+      end
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        version = 'LuaJIT',
+        path = {
+          'lua/?.lua',
+          'lua/?/init.lua',
+        },
+      },
+
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+        }
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
+})
+
+vim.lsp.enable("lua_ls")
+
+vim.lsp.enable("nil_ls")

@@ -1,0 +1,18 @@
+# Load keybindings
+source-file ~/.config/tmux/tmux.keys.conf
+
+# Load terminal configuration
+source-file ~/.config/tmux/tmux.terminal.conf
+
+# Tmux custom theme
+source-file ~/.config/tmux/tmux.theme.conf
+
+# Define tmux plugins.
+# set -g @plugin 'tmux-plugins/tmux-sensible'
+# set -g @plugin 'christoomey/vim-tmux-navigator'
+# set -g @plugin 'catppuccin/tmux'
+# set -g @plugin 'joshmedeski/tmux-nerd-font-window-name'
+# set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Run tmux plugin manager always last.
+# run '/usr/share/tmux-plugin-manager/tpm'

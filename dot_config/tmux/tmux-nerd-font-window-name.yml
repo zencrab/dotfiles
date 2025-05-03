@@ -1,7 +1,0 @@
-config:
-  downcase-name: true
-
-icons:
-  chezmoi: ""
-  python: ""
-  nix: "󱄅"

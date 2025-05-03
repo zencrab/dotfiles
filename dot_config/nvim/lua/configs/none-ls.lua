@@ -15,6 +15,11 @@ none_ls.setup({
 			filetypes = { "markdown" },
 		}),
 
+        -- Nix
+        none_ls.builtins.formatting.nixfmt.with({
+            filetypes = { "nix" },
+        }),
+
 		-- Python
 		none_ls.builtins.diagnostics.mypy.with({
 			filetypes = { "python" },

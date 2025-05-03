@@ -1,4 +1,3 @@
-
 # Disable greeting
 set fish_greeting
 
@@ -18,3 +17,8 @@ source ~/.config/fish/starship.fish
 
 # Conda
 source ~/.config/fish/conda.fish
+
+# Nix
+if test -e $HOME/.nix-profile/bin/home-manager;
+    bash $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+end

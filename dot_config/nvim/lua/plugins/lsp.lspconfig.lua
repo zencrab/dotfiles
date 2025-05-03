@@ -40,17 +40,17 @@ return {
 
         opts = {
             automatic_installation = false,
-            ensure_installed = {
-                "jsonls",
-                "ltex",
-                "lua_ls",
-                "marksman",
-                "pyright",
-                "taplo",
-                "texlab",
-                "ts_ls",
-                "yamlls",
-            },
+            -- ensure_installed = {
+            --     "jsonls",
+            --     "ltex",
+            --     "lua_ls",
+            --     "marksman",
+            --     "pyright",
+            --     "taplo",
+            --     "texlab",
+            --     "ts_ls",
+            --     "yamlls",
+            -- },
         },
 
         config = function(_, opts)
