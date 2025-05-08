@@ -27,6 +27,7 @@
     fzf
     gomi
     lazygit
+    ripgrep
     starship
     tmux
     yazi
@@ -37,10 +38,11 @@
     tree-sitter
 
     # LSPs
-    luajitPackages.lua-lsp
+    lua-language-server
     nil
     # Formatters
     nixfmt-rfc-style
+    stylua
   ];
 
   # Dotfiles managed by Home Manager.
