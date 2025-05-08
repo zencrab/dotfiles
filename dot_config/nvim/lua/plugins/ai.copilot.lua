@@ -1,6 +1,5 @@
 return {
 	"zbirenbaum/copilot.lua",
-
     build = ":Copilot auth",
 
 	event = "InsertEnter",
@@ -14,40 +13,19 @@ return {
 
 	config = function(_, opts)
 		require("copilot").setup(opts)
-	end,
 
-	keys = {
-		{
-			"<C-e>",
-			mode = "i",
-			function()
-				require("copilot.suggestion").accept()
-			end,
-			desc = "Copilot accept suggestion",
-		},
-		{
-			"<C-]>",
-			mode = "i",
-			function()
-				require("copilot.suggestion").next()
-			end,
-			desc = "Copilot next suggestion",
-		},
-		{
-			"<C-[>",
-			mode = "i",
-			function()
-				require("copilot.suggestion").prev()
-			end,
-			desc = "Copilot previous suggestion",
-		},
-		{
-			"<leader>cT",
-			mode = { "n" },
-			function()
-				require("copilot.suggestion").toggle_auto_trigger()
-			end,
-			desc = "Copilot toggle suggestions",
-		},
-	},
+        local map = vim.keymap.set
+        map("i", "<C-e>", function ()
+            require("copilot.suggestion").accept()
+        end, { desc = "Copilot accept suggestion" })
+        map("i", "<C-]>", function ()
+            require("copilot.suggestion").next()
+        end, { desc = "Copilot next suggestion" })
+        map("i", "<C-[>", function ()
+            require("copilot.suggestion").prev()
+        end, { desc = "Copilot previous suggestion" })
+        map("n", "<leader>cT", function ()
+            require("copilot.suggestion").toggle_auto_trigger()
+        end, { desc = "Copilot toggle suggestions" })
+	end,
 }

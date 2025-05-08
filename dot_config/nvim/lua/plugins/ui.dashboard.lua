@@ -1,10 +1,8 @@
 return {
 	"nvimdev/dashboard-nvim",
-	event = "VimEnter",
-
-	dependencies = {
-		"RileyGabrielson/inspire.nvim",
-	},
+	name = "dashboard.nvim",
+    
+    event = "VimEnter",
 
 	opts = {
 		theme = "hyper",
@@ -12,14 +10,13 @@ return {
 		config = {
 			disable_move = true,
 			header = {
-				"                                                                                       ",
-				" █████╗ ██████╗  ██████╗██╗  ██╗ ██████╗ ███╗   ██╗    ██╗      █████╗ ██████╗ ███████╗",
-				"██╔══██╗██╔══██╗██╔════╝██║  ██║██╔═══██╗████╗  ██║    ██║     ██╔══██╗██╔══██╗██╔════╝",
-				"███████║██████╔╝██║     ███████║██║   ██║██╔██╗ ██║    ██║     ███████║██████╔╝███████╗",
-				"██╔══██║██╔══██╗██║     ██╔══██║██║   ██║██║╚██╗██║    ██║     ██╔══██║██╔══██╗╚════██║",
-				"██║  ██║██║  ██║╚██████╗██║  ██║╚██████╔╝██║ ╚████║    ███████╗██║  ██║██████╔╝███████║",
-				"╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝    ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝",
-				"                                                                                       ",
+                " ███████╗███████╗███╗   ██╗ ██████╗██████╗  █████╗ ██████╗ ",
+                " ╚══███╔╝██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗",
+                "   ███╔╝ █████╗  ██╔██╗ ██║██║     ██████╔╝███████║██████╔╝",
+                "  ███╔╝  ██╔══╝  ██║╚██╗██║██║     ██╔══██╗██╔══██║██╔══██╗",
+                " ███████╗███████╗██║ ╚████║╚██████╗██║  ██║██║  ██║██████╔╝",
+                " ╚══════╝╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ",
+                "                                                           ",
 			},
 			shortcut = {
 				{
@@ -40,31 +37,33 @@ return {
 					icon = " ",
 					desc = "Files",
 					group = "Label",
-					action = "Telescope find_files",
+					action = function()
+                        Snacks.picker.files()
+                    end,
 					key = "f",
 				},
 				{
 					icon = " ",
-					desc = "Old Files",
+					desc = "Recent Files",
 					group = "Label",
-					action = "Telescope oldfiles",
-					key = "o",
+					action = function()
+                        Snacks.picker.recent()
+                    end,
+					key = "r",
 				},
 				{
 					icon = " ",
 					desc = "Chezmoi Files",
 					group = "Label",
-					action = "Telescope chezmoi find_files",
+					action = function()
+                        Snacks.picker.files({ 
+                            title = "Chezmoi",
+                            cwd = os.getenv("HOME") .. "/.local/share/chezmoi/" 
+                        })
+                    end,
 					key = "c",
 				},
 			},
-			footer = function()
-				local inspire = require("inspire")
-				local quote = inspire.get_quote()
-
-				-- Add an empty line at the beginning and return the centered text
-				return vim.list_extend({ "", "" }, inspire.center_text(quote.text, quote.author, 80, 8, 80))
-			end,
 		},
-	},
+    },
 }

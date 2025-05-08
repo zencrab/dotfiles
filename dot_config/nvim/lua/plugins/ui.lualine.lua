@@ -81,9 +81,11 @@ return {
 					},
 				},
 
-				-- lualine_c = {
-				-- 	{ require("NeoComposer.ui").status_recording },
-				-- },
+				lualine_c = {
+                    {
+
+                    }
+				},
 
 				lualine_d = {
 					"%=",

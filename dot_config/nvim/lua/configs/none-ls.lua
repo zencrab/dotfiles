@@ -7,29 +7,29 @@ none_ls.setup({
 			filetypes = { "lua" },
 		}),
 
-		-- Markdown
-		none_ls.builtins.diagnostics.markdownlint.with({
-			filetypes = { "markdown" },
-		}),
-		none_ls.builtins.formatting.prettier.with({
-			filetypes = { "markdown" },
-		}),
+		-- -- Markdown
+		-- none_ls.builtins.diagnostics.markdownlint.with({
+		-- 	filetypes = { "markdown" },
+		-- }),
+		-- none_ls.builtins.formatting.prettier.with({
+		-- 	filetypes = { "markdown" },
+		-- }),
 
         -- Nix
         none_ls.builtins.formatting.nixfmt.with({
             filetypes = { "nix" },
         }),
 
-		-- Python
-		none_ls.builtins.diagnostics.mypy.with({
-			filetypes = { "python" },
-		}),
-		none_ls.builtins.formatting.black.with({
-			filetypes = { "python" },
-		}),
-		none_ls.builtins.formatting.isort.with({
-			filetypes = { "python" },
-		}),
+		-- -- Python
+		-- none_ls.builtins.diagnostics.mypy.with({
+		-- 	filetypes = { "python" },
+		-- }),
+		-- none_ls.builtins.formatting.black.with({
+		-- 	filetypes = { "python" },
+		-- }),
+		-- none_ls.builtins.formatting.isort.with({
+		-- 	filetypes = { "python" },
+		-- }),
 
         -- WebDev
         -- none_ls.builtins.formatting.prettier{{

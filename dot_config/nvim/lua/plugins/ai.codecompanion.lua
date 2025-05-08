@@ -4,12 +4,11 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
-		"j-hui/fidget.nvim",
 	},
 
-	init = function()
-		require("configs.codecompanion-fidget"):init()
-	end,
+	-- init = function()
+	-- 	require("configs.codecompanion"):init()
+	-- end,
 
 	opts = {
 		strategies = {

@@ -1,6 +1,6 @@
 return {
 	"xvzc/chezmoi.nvim",
-	event = "VeryLazy",
+	event = "ChezmoiFile",
 
 	opts = {
 		edit = {
@@ -13,8 +13,8 @@ return {
 			"<leader>cz",
 			mode = "n",
 			function()
-				require("telescope").extensions.chezmoi.find_files()
-			end,
+                require("configs.chezmoi"):picker()
+            end,
 			desc = "Chezmoi find files",
 		},
 	},
