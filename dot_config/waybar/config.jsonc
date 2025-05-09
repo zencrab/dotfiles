@@ -1,8 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top",
-    "margin": "2 4 2 4",
-    "reload_syle_on_change": true,
+    "margin": "1 4 0 4",
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -11,8 +10,8 @@
     ],
     "modules-right": [
         "group/expand",
-        "network",
         "battery",
+        "network",
         "clock"
     ],
     "hyprland/window": {
@@ -56,15 +55,15 @@
         ]
     },
     "cpu": {
-        "format": "   {usage}%",
+        "format": "  {usage}%",
         "tooltip": true
     },
     "memory": {
-        "format": "   {percentage}%"
+        "format": "  {percentage}%"
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "  {temperatureC}°C",
+        "format": " {temperatureC}°C",
         "tooltip": false
     },
     "tray": {
@@ -98,10 +97,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-full": " {capacity}%",
-        "format-plugged": "   {capacity}%",
-        "format-charging": "  {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-charging": " {capacity}%",
         "format-icons": [
             " ",
             " ",
@@ -118,19 +117,19 @@
     },
     "backlight": {
         "device": "acpi_video1",
-        "format": "  {}%",
+        "format": " {}%",
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "{icon}   {volume}%",
-        "format-bluetooth": "  {volume}%",
-        "format-muted": "   {volume}%",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-muted": "  {volume}%",
         "format-icons": {
             "headphones": "",
             "default": [
                 "",
-                "",
-                ""
+                " ",
+                " "
             ]
         },
         "max-volume": 100,

@@ -1,7 +1,7 @@
 @import "catppuccin-mocha.css";
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
 }
@@ -31,7 +31,7 @@ window#waybar {
 }
 #workspaces button {
     all:unset;
-    padding: 0px 10px;
+    padding: 0px 8px;
     color: @overlay0;
 }
 #workspaces button.active {
