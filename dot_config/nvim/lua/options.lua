@@ -7,8 +7,8 @@ vim.o.hlsearch = true
 -- History
 vim.o.undofile = true
 
--- auto-session recommended options.
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+-- persistence.nvim recommended options (https://github.com/folke/persistence.nvim/issues/80#issuecomment-2506424807)
+vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
 -- -------------------------------- General ------------------------------------
 vim.o.expandtab = true          -- Use spaces instead of actual TAB characters.

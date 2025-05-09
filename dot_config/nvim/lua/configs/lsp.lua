@@ -14,6 +14,5 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
-
 vim.lsp.enable("lua-language-server")
 vim.lsp.enable("nil-language-server")

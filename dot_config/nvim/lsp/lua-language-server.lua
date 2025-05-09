@@ -1,17 +1,20 @@
 vim.lsp.config('lua-language-server', {
 
-    -- Command and arguments to start the server.
     cmd = { 'lua-language-server' },
 
-    -- Filetypes to automatically attach to.
     filetypes = { 'lua' },
 
-    -- Indicate the parent direcotry of the workspace.
     root_markers = { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" },
 
-    -- Server settings.
+    on_attach = require("modules.lsp").on_attach,
+
     settings = {
         Lua = {
+            diagnostics = {
+                globals = {
+                    "Snacks",
+                },
+            },
             runtime = {
                 version = "LuaJIT",
                 path = {
@@ -25,6 +28,9 @@ vim.lsp.config('lua-language-server', {
                     vim.env.VIMRUNTIME,
                 },
             },
+            telemetry = {
+                enable = false,
+            }
         },
     },
 })

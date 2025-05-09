@@ -11,15 +11,15 @@ return {
 
 		integrations = {
 			blink_cmp = true,
-            dashboard = true,
+			dashboard = true,
 			fidget = true,
-            flash = true,
-            gitsigns = true,
+			flash = true,
+			gitsigns = true,
 			mason = true,
-            mini = {
-                enabled = true,
-                indentscope_color = "blue",
-            },
+			mini = {
+				enabled = true,
+				indentscope_color = "blue",
+			},
 			snacks = {
 				enabled = true,
 				indent_scope_color = "blue",

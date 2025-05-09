@@ -1,22 +1,26 @@
 return {
 	"nvimdev/dashboard-nvim",
 	name = "dashboard.nvim",
-    
-    event = "VimEnter",
+
+	dependencies = {
+		"echasnovski/mini.icons",
+	},
+
+	event = "VimEnter",
 
 	opts = {
 		theme = "hyper",
+		disable_move = true,
 		shortcut_type = "number",
 		config = {
-			disable_move = true,
 			header = {
-                " ███████╗███████╗███╗   ██╗ ██████╗██████╗  █████╗ ██████╗ ",
-                " ╚══███╔╝██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗",
-                "   ███╔╝ █████╗  ██╔██╗ ██║██║     ██████╔╝███████║██████╔╝",
-                "  ███╔╝  ██╔══╝  ██║╚██╗██║██║     ██╔══██╗██╔══██║██╔══██╗",
-                " ███████╗███████╗██║ ╚████║╚██████╗██║  ██║██║  ██║██████╔╝",
-                " ╚══════╝╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ",
-                "                                                           ",
+				" ███████╗███████╗███╗   ██╗ ██████╗██████╗  █████╗ ██████╗ ",
+				" ╚══███╔╝██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗",
+				"   ███╔╝ █████╗  ██╔██╗ ██║██║     ██████╔╝███████║██████╔╝",
+				"  ███╔╝  ██╔══╝  ██║╚██╗██║██║     ██╔══██╗██╔══██║██╔══██╗",
+				" ███████╗███████╗██║ ╚████║╚██████╗██║  ██║██║  ██║██████╔╝",
+				" ╚══════╝╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ",
+				"                                                           ",
 			},
 			shortcut = {
 				{
@@ -27,19 +31,12 @@ return {
 					key = "p",
 				},
 				{
-					icon = "󰢛 ",
-					desc = "Mason",
-					group = "Number",
-					action = "Mason",
-					key = "m",
-				},
-				{
 					icon = " ",
 					desc = "Files",
 					group = "Label",
 					action = function()
-                        Snacks.picker.files()
-                    end,
+						Snacks.picker.files()
+					end,
 					key = "f",
 				},
 				{
@@ -47,8 +44,8 @@ return {
 					desc = "Recent Files",
 					group = "Label",
 					action = function()
-                        Snacks.picker.recent()
-                    end,
+						Snacks.picker.recent()
+					end,
 					key = "r",
 				},
 				{
@@ -56,14 +53,15 @@ return {
 					desc = "Chezmoi Files",
 					group = "Label",
 					action = function()
-                        Snacks.picker.files({ 
-                            title = "Chezmoi",
-                            cwd = os.getenv("HOME") .. "/.local/share/chezmoi/" 
-                        })
-                    end,
+						require("functions.chezmoi"):picker()
+					end,
 					key = "c",
 				},
 			},
+			footer = {
+				"",
+				" Neovim",
+			},
 		},
-    },
+	},
 }

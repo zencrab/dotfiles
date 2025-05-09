@@ -2,19 +2,28 @@ return {
 	"folke/flash.nvim",
 
 	---@type Flash.Config
-	opts = {},
+	opts = {
+		modes = {
+			char = {
+				enabled = false,
+			},
+		},
+		prompt = {
+			prefix = { { "  Flashing to: ", "FlashMatch" } },
+		},
+	},
 
 	keys = {
 		{
-			"-",
-			mode = { "n", "x", "o" }, -- normal, visual, operator-pending
+			"f",
+			mode = { "n", "x", "o" },
 			function()
 				require("flash").jump()
 			end,
 			desc = "Flash Jump",
 		},
 		{
-			"_",
+			"F",
 			mode = { "n", "x", "o" },
 			function()
 				require("flash").treesitter()

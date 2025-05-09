@@ -16,10 +16,11 @@
         "clock"
     ],
     "hyprland/window": {
-        "icon": true,
+        "icon": false,
         "format": "{initialTitle}",
         "rewrite": {
             "kitty": "Terminal",
+            "Spotify(.*)": "Spotify"
         },
         "max-length": 100,
         "icon-size": 20,

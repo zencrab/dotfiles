@@ -23,7 +23,15 @@ return {
 		keymaps = {
 			show_help = "<C-h>",
 		},
-
 		floating_window_scaling_factor = 0.8,
+		integrations = {
+			grep_in_directory = function(directory)
+				Snacks.picker.grep({
+					cwd = directory,
+					title = "Grep in directory",
+				})
+			end,
+			picker_add_copy_relative_path_action = "snacks.picker",
+		},
 	},
 }

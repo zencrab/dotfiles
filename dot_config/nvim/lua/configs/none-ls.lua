@@ -15,10 +15,10 @@ none_ls.setup({
 		-- 	filetypes = { "markdown" },
 		-- }),
 
-        -- Nix
-        none_ls.builtins.formatting.nixfmt.with({
-            filetypes = { "nix" },
-        }),
+		-- Nix
+		none_ls.builtins.formatting.nixfmt.with({
+			filetypes = { "nix" },
+		}),
 
 		-- -- Python
 		-- none_ls.builtins.diagnostics.mypy.with({
@@ -31,9 +31,9 @@ none_ls.setup({
 		-- 	filetypes = { "python" },
 		-- }),
 
-        -- WebDev
-        -- none_ls.builtins.formatting.prettier{{
-        --     filetypes = {""}
-        -- }}
+		-- WebDev
+		-- none_ls.builtins.formatting.prettier{{
+		--     filetypes = {""}
+		-- }}
 	},
 })

@@ -1,5 +1,10 @@
 return {
 	"xvzc/chezmoi.nvim",
+
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+
 	event = "ChezmoiFile",
 
 	opts = {
@@ -13,8 +18,8 @@ return {
 			"<leader>cz",
 			mode = "n",
 			function()
-                require("configs.chezmoi"):picker()
-            end,
+				require("modules.chezmoi"):picker()
+			end,
 			desc = "Chezmoi find files",
 		},
 	},

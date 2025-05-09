@@ -11,19 +11,9 @@ vim.lsp.config("nil-language-server", {
 
     -- Server settings.
     settings = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT",
-                path = {
-                    "lua/?.lua",
-                    "lua/?/init.lua",
-                },
-            },
-            workspace = {
-                checkThirdParty = false,
-                library = {
-                    vim.env.VIMRUNTIME,
-                },
+        ["nil"] = {
+            telemetry = {
+                enable = false,
             },
         },
     },

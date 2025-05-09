@@ -1,24 +1,29 @@
-{ pkgs, ... }:
+{ pkgs, spicetify-nix, ... }:
 
 {
+  # Home Manager configuration for the user.
+  home.username = "zencrab";
+  home.homeDirectory = "/home/zencrab";
+
   imports = [
     ./bat.nix
     ./firefox.nix
     ./tmux.nix
     ./yazi.nix
+    ./spotify.nix
+    spicetify-nix.homeManagerModules.default
   ];
 
-  home.username = "zencrab";
-  home.homeDirectory = "/home/zencrab";
-
-  # Home Manager release that your configuration is compatible with.
-  home.stateVersion = "24.11";
+  # Packages
+  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     firefox
+    discord
 
     # Fonts
     nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
 
     # CLI tools
     chezmoi
@@ -45,23 +50,9 @@
     stylua
   ];
 
-  # Dotfiles managed by Home Manager.
-  home.file = {
-  };
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either:
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #  /etc/profiles/per-user/zencrab/etc/profile.d/hm-session-vars.sh
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
-
-  # Let Home Manager install and manage itself.
+  # Home Manager release compatability.
+  home.stateVersion = "24.11";
+  # Home Manager auto management.
   programs.home-manager.enable = true;
 
 }

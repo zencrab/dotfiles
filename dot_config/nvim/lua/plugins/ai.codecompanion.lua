@@ -3,11 +3,11 @@ return {
 
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-treesitter/nvim-treesitter",
+		"MeanderingProgrammer/render-markdown.nvim",
 	},
 
 	-- init = function()
-	-- 	require("configs.codecompanion"):init()
+	-- 	require("modules.fidget-codecompanion"):init()
 	-- end,
 
 	opts = {

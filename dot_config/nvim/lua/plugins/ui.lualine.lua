@@ -13,20 +13,6 @@ return {
 			return palette[color]
 		end
 
-		local function get_mode()
-			local mode_map = {
-				n = "NORMAL",
-				i = "INSERT",
-				v = "VISUAL",
-				V = "V-LINE",
-				[""] = "V-BLOCK",
-				c = "COMMAND",
-				R = "REPLACE",
-				t = "TERMINAL",
-			}
-			return " " .. (mode_map[vim.fn.mode()] or "UNKNOWN")
-		end
-
 		local function cursor_location()
 			local progress = math.floor((tonumber(vim.fn.line(".")) / tonumber(vim.fn.line("$"))) * 100)
 			local location = vim.fn.line(".") .. ":" .. vim.fn.col(".")
@@ -40,7 +26,7 @@ return {
 
 		local function get_lsp_color()
 			local clients = vim.lsp.get_clients({ bufnr = 0 })
-			return { fg = (#clients > 0) and get_color("green") or get_color("red") }
+			return { fg = (#clients > 0) and get_color("green") or get_color("subtext0") }
 		end
 
 		local function get_file_icon_and_name()
@@ -67,32 +53,20 @@ return {
 			sections = {
 				lualine_a = {
 					{
-						get_mode,
-						separator = { left = "", right = "" },
-						color = { gui = "bold" },
+						"mode",
+						icon = "",
 					},
 				},
 
 				lualine_b = {
 					{
 						cursor_location,
-						color = { fg = get_color("subtext0") },
+						color = { fg = get_color("subtext0"), bg = get_color("base") },
 						padding = { left = 1, right = 0 },
 					},
 				},
-
 				lualine_c = {
-                    {
-
-                    }
-				},
-
-				lualine_d = {
-					"%=",
-					{
-						"diff",
-						symbols = { added = " ", modified = " ", removed = " " },
-					},
+					{},
 				},
 
 				lualine_x = {
@@ -115,7 +89,6 @@ return {
 				lualine_z = {
 					{
 						get_cwd_name,
-						separator = { left = "", right = "" },
 						color = { bg = get_color("rosewater"), gui = "bold" },
 					},
 				},
