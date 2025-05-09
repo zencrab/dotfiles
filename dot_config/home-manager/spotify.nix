@@ -1,18 +1,18 @@
 {
-    config,
-    pkgs,
-    spicetify-nix,
-    ...
+  config,
+  pkgs,
+  spicetify-nix,
+  ...
 }:
 
 let
-    spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
+  spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
 in
 {
-    programs.spicetify = {
-        enable = true;
+  programs.spicetify = {
+    enable = true;
 
-        theme = spicePkgs.themes.catppuccin;
-        colorScheme = "mocha";
-    };
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
+  };
 }
