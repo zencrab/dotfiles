@@ -1,33 +1,36 @@
 -- This file needs to be required before lazy.setup()
 vim.g.lazy_events_config = {
 
-    simple = {
-        -- LazyFile fires when you enter a non special buffer (e.g. not dashboard, lazy, mason)
-        LazyFile = { "BufReadPost", "BufNewFile", "BufWritePre" }
-    },
+	simple = {
+		-- LazyFile fires when you enter a non special buffer (e.g. not dashboard, lazy, mason)
+		LazyFile = { "BufReadPost", "BufNewFile", "BufWritePre" },
 
-    projects = {},
+		-- LazyFilePost fires when you finish loading a non special buffer
+		LazyFilePost = { "BufReadPost", "BufNewFile" },
+	},
 
-    custom = {
-        -- DashboardLeave fires when you leave the dashboard buffer.
-        DashboardLeave = {
-            event = "BufLeave",
-            pattern = "*",
-            once = true,
-            cond = function(event)
-                local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = event.buf })
-                return buf_ft == "dashboard"
-            end,
-        },
+	projects = {},
 
-        -- ChezmoiFile fires when the current buffer worked with is a file in the chezmoi directory.
-        ChezmoiFile = {
-            event = { "BufRead", "BufNewFile" },
-            pattern = os.getenv("HOME") .. "/.local/share/chezmoi/*",
-            once = false,
-            cond = function(event)
-                return true
-            end,
-        }
-    },
+	custom = {
+		-- DashboardLeave fires when you leave the dashboard buffer.
+		DashboardLeave = {
+			event = "BufLeave",
+			pattern = "*",
+			once = true,
+			cond = function(event)
+				local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = event.buf })
+				return buf_ft == "dashboard"
+			end,
+		},
+
+		-- ChezmoiFile fires when the current buffer worked with is a file in the chezmoi directory.
+		ChezmoiFile = {
+			event = { "BufRead", "BufNewFile" },
+			pattern = os.getenv("HOME") .. "/.local/share/chezmoi/*",
+			once = false,
+			cond = function(event)
+				return true
+			end,
+		},
+	},
 }

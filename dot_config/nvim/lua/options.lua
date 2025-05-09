@@ -11,13 +11,13 @@ vim.o.undofile = true
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
 -- -------------------------------- General ------------------------------------
-vim.o.expandtab = true          -- Use spaces instead of actual TAB characters.
-vim.o.tabstop = 4               -- Number of visual spaces per TAB.
-vim.o.softtabstop = 4           -- Number of spaces in editing operations like <Tab>.
-vim.o.shiftwidth = 4            -- Number of spaces to use for autoindent.
+vim.o.expandtab = true -- Use spaces instead of actual TAB characters.
+vim.o.tabstop = 4 -- Number of visual spaces per TAB.
+vim.o.softtabstop = 4 -- Number of spaces in editing operations like <Tab>.
+vim.o.shiftwidth = 4 -- Number of spaces to use for autoindent.
 
-vim.o.cmdheight = 0             -- Set the location of Neovim CMD prompt.
-vim.o.laststatus = 3            -- Show only one statusline for all windows.
+vim.o.cmdheight = 0 -- Set the location of Neovim CMD prompt.
+vim.o.laststatus = 3 -- Show only one statusline for all windows.
 
 -- Terminal
 vim.g.have_nerd_font = true
@@ -36,10 +36,9 @@ vim.o.winborder = "rounded"
 -- Conceal lines (Markdown, LaTex)
 vim.opt.conceallevel = 2
 
-
 -- -------------------------------- Editor -------------------------------------
 
--- Text wrapping 
+-- Text wrapping
 vim.opt.wrap = true
 
 -- Line number
@@ -52,3 +51,7 @@ vim.opt.splitbelow = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- --------------------------------- LSP ---------------------------------------
+-- Format (https://github.com/stevearc/conform.nvim?tab=readme-ov-file#setup)
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"

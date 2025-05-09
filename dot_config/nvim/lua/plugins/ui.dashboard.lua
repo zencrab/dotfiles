@@ -53,7 +53,7 @@ return {
 					desc = "Chezmoi Files",
 					group = "Label",
 					action = function()
-						require("functions.chezmoi"):picker()
+						require("modules.chezmoi"):picker()
 					end,
 					key = "c",
 				},

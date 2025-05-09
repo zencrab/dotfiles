@@ -14,5 +14,6 @@ vim.diagnostic.config({
 	severity_sort = true,
 })
 
-vim.lsp.enable("lua-language-server")
-vim.lsp.enable("nil-language-server")
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("nil_ls")
+vim.lsp.enable("pyright")
