@@ -31,10 +31,6 @@ require("lazy").setup(plugins, {
 			not_loaded = " ",
 		},
 	},
-	checker = {
-		enabled = true,
-		notify = true,
-	},
 	rocks = {
 		enabled = false,
 	},

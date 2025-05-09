@@ -11,6 +11,11 @@ return {
 		edit = {
 			watch = true,
 		},
+		notification = {
+			on_open = false,
+			on_apply = false,
+			on_watch = false,
+		},
 	},
 
 	keys = {

@@ -1,20 +1,19 @@
 @import "catppuccin-mocha.css";
 
 * {
-    font-family: "JetBrainsMono Nerd Font", Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
+    font-family: "FiraCode Nerd Font"; 
+    font-weight: 500;
+    font-size: 13px;
 }
 
 window#waybar {
     background: @base;
     border: 2px solid @blue;
     border-radius: 6px;
-
 }
 
 .modules-left, .modules-center, .modules-right {
-    padding: 8px;
+    padding: 8px 0px 8px 0px;
 }
 
 .modules-center {
@@ -46,9 +45,7 @@ window#waybar {
 }
 
 
-/* ---------------------------------------------------------------------------------------
-Tooltip
---------------------------------------------------------------------------------------- */
+/* -------------------------------- Tooltip -------------------------------- */
 
 tooltip {
     background: @surface0;
@@ -56,9 +53,9 @@ tooltip {
     border: 0.3px solid @text;
 }
 
-/* ---------------------------------------------------------------------------------------
-Battery Coloring
---------------------------------------------------------------------------------------- */
+
+/* -------------------------------- Battery -------------------------------- */
+
 #battery.charging, #battery.plugged, #battery.full {
     color: @green;
 }
@@ -73,9 +70,8 @@ Battery Coloring
     color: @red;
 }
 
-/* ---------------------------------------------------------------------------------------
-Volume Coloring
---------------------------------------------------------------------------------------- */
+
+/* -------------------------------- Volume --------------------------------- */
 #pulseaudio.bluetooth {
     color: @blue;
 }

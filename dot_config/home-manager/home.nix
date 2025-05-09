@@ -6,6 +6,7 @@
     home.homeDirectory = "/home/zencrab";
 
     imports = [
+        # ./shell.nix
         ./bat.nix
         ./firefox.nix
         ./tmux.nix
@@ -18,25 +19,33 @@
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
-        firefox
-        discord
-
         # Fonts
-        nerd-fonts.jetbrains-mono
-        nerd-fonts.arimo
+        nerd-fonts.fira-code
 
         # CLI tools
+        btop
         chezmoi
         eza
         fastfetch
+        fd
         fzf
         gomi
         lazygit
         ripgrep
         starship
+        tldr
         tmux
         yazi
         zoxide
+
+        # Development tools
+        python3
+        nodejs
+
+        # Must-have programs
+        firefox
+        zathura
+        discord
 
         # Neovim packages
         neovim

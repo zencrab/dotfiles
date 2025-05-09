@@ -43,5 +43,11 @@ return {
 			end,
 			desc = "Format buffer",
 		},
+		{
+			"<leader>fI",
+			mode = { "n" },
+			"<cmd>ConformInfo<cr>",
+			desc = "Format info",
+		},
 	},
 }

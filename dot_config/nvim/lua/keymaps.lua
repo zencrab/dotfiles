@@ -90,8 +90,3 @@ map("n", "<leader>lwr", vim.lsp.buf.remove_workspace_folder, { desc = "Code remo
 map("n", "<leader>lwl", function()
 	vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()), vim.log.levels.INFO)
 end, { desc = "Code list workspace folders" })
-map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Code format document" })
-
-
--- 
-

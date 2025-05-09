@@ -15,11 +15,14 @@
         "clock"
     ],
     "hyprland/window": {
-        "icon": false,
+        "icon": true,
         "format": "{initialTitle}",
         "rewrite": {
-            "kitty": "Terminal",
-            "Spotify(.*)": "Spotify"
+            "(.*)kitty(.*)": "Terminal",
+            "(.*)Firefox(.*)": "Firefox",
+            "(.*)Spotify(.*)": "Spotify",
+            "(.*)Discord(.*)": "Discord",
+            "(.*)zathura(.*)": "Zathura"
         },
         "max-length": 100,
         "icon-size": 20,

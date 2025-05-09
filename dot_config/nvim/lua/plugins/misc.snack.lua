@@ -4,6 +4,13 @@ return {
 
 	---@type snacks.Config
 	opts = {
+		animate = { enabled = false },
+		bigfile = { enabled = false },
+
+		-- delete buffers without disrupting window layout
+		bufdelete = {
+			enabled = true,
+		},
 
 		-- Lazygit
 		lazygit = {
@@ -20,6 +27,15 @@ return {
 
 	-- Keymaps
 	keys = {
+
+		-- bufdelete
+		{
+			"<leader>bd",
+			function()
+				require("snacks").bufdelete()
+			end,
+			desc = "Delete current buffer",
+		},
 
 		-- Lazygit
 		{
