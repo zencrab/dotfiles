@@ -1,17 +1,9 @@
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{
-    config,
-    pkgs,
-    nixpkgs,
-    inputs,
-    ...
-}:
+{ pkgs, ... }:
 
 {
     imports = [
         ./hardware-configuration.nix
+        ./shell.nix
     ];
 
     # Allow experimental features.
@@ -50,8 +42,11 @@
         pulseaudio
         toybox # Unix CLI utilities (killall, etc.)
 
-        # CLI tools
+        # Fish shell and plugins
         fish
+        fishPlugins.fzf-fish
+
+        # Command line tools
         zip
         unzip
 
@@ -89,13 +84,12 @@
     # Enable automatic CPU speed and power optimiser daemon.
     services.auto-cpufreq.enable = true;
 
-    # Set fish as the default shell.
-    users.defaultUserShell = pkgs.fish;
-
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.zencrab = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
+
+        shell = pkgs.fish;
     };
 
     # Current system was installed from and is compatible since release 24.11.

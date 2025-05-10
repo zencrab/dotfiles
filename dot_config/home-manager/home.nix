@@ -6,7 +6,7 @@
     home.homeDirectory = "/home/zencrab";
 
     imports = [
-        # ./shell.nix
+        ./git.nix
         ./bat.nix
         ./firefox.nix
         ./tmux.nix
@@ -39,6 +39,7 @@
         zoxide
 
         # Development tools
+        gcc
         python3
         nodejs
 

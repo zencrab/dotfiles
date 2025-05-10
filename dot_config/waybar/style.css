@@ -2,7 +2,7 @@
 
 * {
     font-family: "FiraCode Nerd Font"; 
-    font-weight: 500;
+    font-weight: 600;
     font-size: 13px;
 }
 
@@ -50,7 +50,8 @@ window#waybar {
 tooltip {
     background: @surface0;
     color: @subtext1;
-    border: 0.3px solid @text;
+    border: 2px solid @blue;
+    padding: 0px 0px 0px 0px;
 }
 
 
