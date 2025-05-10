@@ -47,6 +47,7 @@
         firefox
         zathura
         discord
+        mpv
 
         # Neovim packages
         neovim

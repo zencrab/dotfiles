@@ -16,13 +16,14 @@
     ],
     "hyprland/window": {
         "icon": true,
-        "format": "{initialTitle}",
+        "format": "{class}",
         "rewrite": {
             "(.*)kitty(.*)": "Terminal",
             "(.*)Firefox(.*)": "Firefox",
             "(.*)Spotify(.*)": "Spotify",
             "(.*)Discord(.*)": "Discord",
-            "(.*)zathura(.*)": "Zathura"
+            "(.*)zathura(.*)": "Zathura",
+            "(.*)mpv(.*)": "MPV Player"
         },
         "max-length": 100,
         "icon-size": 20,
