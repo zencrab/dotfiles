@@ -24,6 +24,8 @@
         # Must-have programs
         zathura
         discord
+        obsidian
+
         # Fonts
         nerd-fonts.fira-code
 
@@ -68,6 +70,28 @@
             name = "Btop";
             noDisplay = true;
         };
+        "obsidian" = {
+            type = "Application";
+
+            name = "Obsidian";
+            genericName = "Knowledge Base";
+            icon = "/home/zencrab/.config/icons/obsidian.png";
+
+            exec = "obsidian";
+            terminal = false;
+
+            categories = [
+                "Office"
+            ];
+
+            mimeType = [
+                "x-scheme-handler/obsidian"
+            ];
+
+            settings = {
+                StartupWMClass = "obsidian";
+            };
+
         };
     };
     # Desktop entry for system-wide packages.
