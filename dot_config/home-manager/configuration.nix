@@ -3,6 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        ./bluetooth.nix
         ./shell.nix
     ];
 
@@ -41,6 +42,7 @@
         libnotify
         pulseaudio
         toybox # Unix CLI utilities (killall, etc.)
+        bluetui
 
         # Fish shell and plugins
         fish
