@@ -8,8 +8,10 @@
     imports = [
         ./git.nix
         ./bat.nix
+        ./neovim.nix
         ./firefox.nix
         ./tmux.nix
+        ./mpv.nix
         ./yazi.nix
         ./spotify.nix
         spicetify-nix.homeManagerModules.default
