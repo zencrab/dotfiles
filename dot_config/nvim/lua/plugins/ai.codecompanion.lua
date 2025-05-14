@@ -3,12 +3,9 @@ return {
 
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"ravitemer/codecompanion-history.nvim",
 		"MeanderingProgrammer/render-markdown.nvim",
 	},
-
-	-- init = function()
-	-- 	require("modules.fidget-codecompanion"):init()
-	-- end,
 
 	opts = {
 		strategies = {
@@ -41,7 +38,20 @@ return {
 				})
 			end,
 		},
+		extensions = {
+			history = {
+				enabled = true,
+				opts = {
+					picker = "snacks",
+				},
+			},
+		},
 	},
+
+	config = function(_, opts)
+		require("codecompanion").setup(opts)
+		require("modules.fidget-codecompanion"):init()
+	end,
 
 	keys = {
 		{ "<leader>cc", mode = "n", "<Cmd>CodeCompanionChat<Cr>", desc = "AI open chat" },
