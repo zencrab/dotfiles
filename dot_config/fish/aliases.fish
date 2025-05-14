@@ -11,5 +11,8 @@ alias la 'ls --all'
 alias tree 'eza --tree --git-ignore --color=always --icons=auto'
 alias tree4 'tree --level=4'
 
+# Bat
+alias cat 'bat --paging=never'
+
 # gomi
 alias rm 'gomi'

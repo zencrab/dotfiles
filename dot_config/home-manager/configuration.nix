@@ -33,6 +33,8 @@
     # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
 
+    nixpkgs.config.allowUnfree = true;
+
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
         # System
@@ -40,7 +42,7 @@
         brightnessctl
         libnotify
         pulseaudio
-        toybox # Unix CLI utilities (killall, etc.)
+        busybox # Unix CLI utilities (killall, reboot, etc.)
 
         # Fish shell and plugins
         fish

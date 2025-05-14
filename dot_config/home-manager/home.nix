@@ -21,6 +21,9 @@
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
+        # Must-have programs
+        zathura
+        discord
         # Fonts
         nerd-fonts.fira-code
 
@@ -42,26 +45,16 @@
 
         # Development tools
         gcc
-        python3
         nodejs
 
-        # Must-have programs
-        zathura
-        discord
-        mpv
+        # Lua
+        luajit
+        luajitPackages.busted
+        luajitPackages.luarocks
 
-        # Neovim packages
-        neovim
-        tree-sitter
-
-        # LSPs
-        lua-language-server
-        nil
-        pyright
-        # Formatters
-        nixfmt-rfc-style
-        stylua
-        ruff
+        # Python
+        python3
+        poetry
     ];
 
     # Home Manager release compatability.
@@ -69,4 +62,39 @@
     # Home Manager auto management.
     programs.home-manager.enable = true;
 
+    # Remove desktop entry for user-level packages.
+    xdg.desktopEntries = {
+        "btop" = {
+            name = "Btop";
+            noDisplay = true;
+        };
+        };
+    };
+    # Desktop entry for system-wide packages.
+    xdg.desktopEntries = {
+        "kitty" = {
+            type = "Application";
+
+            name = "Kitty";
+            genericName = "Terminal Emulator";
+            comment = "A fast, feature full, GPU based terminal emulator";
+            icon = "kitty";
+
+            exec = "kitty";
+
+            categories = [
+                "System"
+                "TerminalEmulator"
+            ];
+
+        };
+        "fish" = {
+            name = "Fish";
+            noDisplay = true;
+        };
+        "nixos-manual" = {
+            name = "NixOS Manual";
+            noDisplay = true;
+        };
+    };
 }
