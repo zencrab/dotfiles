@@ -8,6 +8,10 @@ return {
 				winblend = 0,
 			},
 			override_vim_notify = true,
+
+			view = {
+				group_separator = "",
+			},
 		},
 	},
 

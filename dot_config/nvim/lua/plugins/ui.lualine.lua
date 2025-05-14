@@ -54,6 +54,7 @@ return {
 				lualine_a = {
 					{
 						"mode",
+						separator = { left = "", right = "" },
 						icon = "",
 					},
 				},
@@ -82,14 +83,15 @@ return {
 				lualine_y = {
 					{
 						get_file_icon_and_name,
-						color = { fg = get_color("crust"), bg = get_color("maroon"), gui = "bold" },
+						color = { fg = get_color("base"), bg = get_color("maroon"), gui = "bold" },
 					},
 				},
 
 				lualine_z = {
 					{
 						get_cwd_name,
-						color = { bg = get_color("rosewater"), gui = "bold" },
+						color = { fg = get_color("base"), bg = get_color("rosewater"), gui = "bold" },
+						separator = { left = "", right = "" },
 					},
 				},
 			},
