@@ -46,7 +46,6 @@
         nodejs
 
         # Must-have programs
-        firefox
         zathura
         discord
         mpv
