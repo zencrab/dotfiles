@@ -2,7 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	name = "lspconfig.nvim",
 
-	event = "LazyFilePost",
+	lazy = false,
 
 	config = function()
 		require("configs.lsp")

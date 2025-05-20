@@ -4,9 +4,6 @@ return {
 
 	---@type snacks.Config
 	opts = {
-		animate = { enabled = false },
-		bigfile = { enabled = false },
-
 		-- delete buffers without disrupting window layout
 		bufdelete = {
 			enabled = true,

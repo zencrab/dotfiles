@@ -17,3 +17,10 @@ vim.diagnostic.config({
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("nil_ls")
 vim.lsp.enable("pyright")
+vim.lsp.enable("ts_ls")
+
+-- WebDev LSPs (vscode-langservers-extracted)
+vim.lsp.enable("html")
+vim.lsp.enable("cssls")
+vim.lsp.enable("eslint")
+vim.lsp.enable("jsonls")

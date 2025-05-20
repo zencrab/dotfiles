@@ -10,11 +10,27 @@ return {
 	opts = {
 		edit = {
 			watch = true,
+			force = false,
 		},
-		notification = {
-			on_open = false,
-			on_apply = false,
-			on_watch = false,
+		events = {
+			on_open = {
+				notification = {
+					msg = "Opened file",
+					opts = { annote = "Chezmoi" },
+				},
+			},
+			on_watch = {
+				notification = {
+					msg = "Watching file",
+					opts = { annote = "Chezmoi" },
+				},
+			},
+			on_apply = {
+				notification = {
+					msg = "Applied file",
+					opts = { annote = "Chezmoi" },
+				},
+			},
 		},
 	},
 

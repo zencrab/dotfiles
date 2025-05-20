@@ -20,6 +20,13 @@
         # Python
         pyright
         ruff
+
+        # Webstack Dev
+        vscode-langservers-extracted
+        typescript
+        typescript-language-server
+        nodePackages.prettier
+
     ];
 
     xdg.desktopEntries."nvim" = {

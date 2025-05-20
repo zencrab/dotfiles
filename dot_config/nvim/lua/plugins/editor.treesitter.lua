@@ -13,28 +13,25 @@ return {
 		},
 	},
 
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				"bash",
-				"fish",
-				"html",
-				"latex",
-				"lua",
-				"markdown",
-				"markdown_inline",
-				"nix",
-				"python",
-				"typst",
-				"yaml",
-			},
-			auto_install = true,
-			highlight = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-			},
-		})
+	opts = {
+		auto_install = true,
+		ensure_installed = {
+			"bash",
+			"fish",
+			"html",
+			"latex",
+			"lua",
+			"markdown",
+			"markdown_inline",
+			"nix",
+			"python",
+			"typst",
+			"yaml",
+		},
+		highlight = { enable = true },
+		indent = { enable = true },
+	},
+	config = function(_, opts)
+		require("nvim-treesitter.configs").setup(opts)
 	end,
 }

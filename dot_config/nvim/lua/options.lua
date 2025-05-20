@@ -1,5 +1,5 @@
 -- Mode
-vim.opt.showmode = false
+vim.opt.showmode = true
 
 -- Search
 vim.o.hlsearch = true
@@ -11,10 +11,21 @@ vim.o.undofile = true
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
 -- -------------------------------- General ------------------------------------
-vim.o.expandtab = true -- Use spaces instead of actual TAB characters.
-vim.o.tabstop = 4 -- Number of visual spaces per TAB.
-vim.o.softtabstop = 4 -- Number of spaces in editing operations like <Tab>.
-vim.o.shiftwidth = 4 -- Number of spaces to use for autoindent.
+-- Encoding.
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+
+-- Set buffer for window title.
+vim.opt.title = true
+
+-- Indentation
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.backspace = { "indent", "eol", "start" }
 
 vim.o.cmdheight = 0 -- Set the location of Neovim CMD prompt.
 vim.o.laststatus = 3 -- Show only one statusline for all windows.

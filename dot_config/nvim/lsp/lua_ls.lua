@@ -1,4 +1,5 @@
 vim.lsp.config("lua_ls", {
+	-- Server settings
 	settings = {
 		Lua = {
 			diagnostics = {

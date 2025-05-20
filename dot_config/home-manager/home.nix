@@ -25,6 +25,7 @@
         zathura
         discord
         obsidian
+        blender
 
         # Fonts
         nerd-fonts.fira-code
@@ -33,6 +34,7 @@
         btop
         chezmoi
         eza
+        entr
         fastfetch
         fd
         fzf
@@ -47,7 +49,6 @@
 
         # Development tools
         gcc
-        nodejs
 
         # Lua
         luajit
@@ -57,6 +58,10 @@
         # Python
         python3
         poetry
+
+        # Web dev
+        nodejs
+        dart-sass
     ];
 
     # Home Manager release compatability.

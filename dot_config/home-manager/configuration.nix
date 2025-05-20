@@ -3,6 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        ./bluetooth.nix
         ./shell.nix
     ];
 
@@ -42,7 +43,8 @@
         brightnessctl
         libnotify
         pulseaudio
-        busybox # Unix CLI utilities (killall, reboot, etc.)
+        toybox # Unix CLI utilities (killall, etc.)
+        bluetui
 
         # Fish shell and plugins
         fish

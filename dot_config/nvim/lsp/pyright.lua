@@ -1,5 +1,5 @@
 vim.lsp.config("pyright", {
-	-- Specific settings
+	-- Server settings
 	settings = {
 		python = {
 			analysis = {

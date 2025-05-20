@@ -73,10 +73,6 @@ tooltip {
 
 
 /* -------------------------------- Volume --------------------------------- */
-#pulseaudio.bluetooth {
-    color: @blue;
-}
-
 #pulseaudio.muted.normal, #pulseaudio.muted.loud, #pulseaudio.muted {
     color: @surface2;
 }
