@@ -8,8 +8,10 @@
     imports = [
         ./git.nix
         ./bat.nix
+        ./neovim.nix
         ./firefox.nix
         ./tmux.nix
+        ./mpv.nix
         ./yazi.nix
         ./spotify.nix
         spicetify-nix.homeManagerModules.default
@@ -48,11 +50,10 @@
         # Development tools
         gcc
 
-        # Must-have programs
-        firefox
-        zathura
-        discord
-        mpv
+        # Lua
+        luajit
+        luajitPackages.busted
+        luajitPackages.luarocks
 
         # Python
         python3
@@ -68,4 +69,61 @@
     # Home Manager auto management.
     programs.home-manager.enable = true;
 
+    # Remove desktop entry for user-level packages.
+    xdg.desktopEntries = {
+        "btop" = {
+            name = "Btop";
+            noDisplay = true;
+        };
+        "obsidian" = {
+            type = "Application";
+
+            name = "Obsidian";
+            genericName = "Knowledge Base";
+            icon = "/home/zencrab/.config/icons/obsidian.png";
+
+            exec = "obsidian";
+            terminal = false;
+
+            categories = [
+                "Office"
+            ];
+
+            mimeType = [
+                "x-scheme-handler/obsidian"
+            ];
+
+            settings = {
+                StartupWMClass = "obsidian";
+            };
+
+        };
+    };
+    # Desktop entry for system-wide packages.
+    xdg.desktopEntries = {
+        "kitty" = {
+            type = "Application";
+
+            name = "Kitty";
+            genericName = "Terminal Emulator";
+            comment = "A fast, feature full, GPU based terminal emulator";
+            icon = "kitty";
+
+            exec = "kitty";
+
+            categories = [
+                "System"
+                "TerminalEmulator"
+            ];
+
+        };
+        "fish" = {
+            name = "Fish";
+            noDisplay = true;
+        };
+        "nixos-manual" = {
+            name = "NixOS Manual";
+            noDisplay = true;
+        };
+    };
 }

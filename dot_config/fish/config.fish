@@ -19,10 +19,10 @@ if type -q starship
     source ~/.config/fish/starship.fish
 end
 
-# Conda
-source ~/.config/fish/conda.fish
-
 # Nix variables
 if test -e $HOME/.nix-profile/bin/home-manager;
     bash $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 end
+
+# Conda
+source ~/.config/fish/conda.fish

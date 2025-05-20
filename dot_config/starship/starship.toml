@@ -8,7 +8,7 @@ $character
 """
 
 right_format = """
-$conda
+$conda$python
 """
 
 [directory]
@@ -22,6 +22,11 @@ format = '[$symbol$environment]($style) '
 symbol = ' '
 style = 'green'
 ignore_base = false
+
+[python]
+format = '[${symbol}${version}]($style)'
+symbol = ' '
+style = 'yellow bold'
 
 [git_branch]
 format = 'on [$symbol$branch(:$remote_branch)]($style): '

@@ -39,17 +39,11 @@ return {
 	keys = {
 		{
 			"<leader>fm",
-			mode = { "n", "v" },
+			mode = "n",
 			function()
 				require("conform").format({ async = true })
 			end,
 			desc = "Format buffer",
-		},
-		{
-			"<leader>fI",
-			mode = { "n" },
-			"<cmd>ConformInfo<cr>",
-			desc = "Format info",
 		},
 	},
 }

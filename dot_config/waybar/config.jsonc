@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top",
-    "margin": "1 4 0 4",
+    "position": "bottom",
+    "margin": "0 4 1 4",
     "modules-left": [
         "hyprland/workspaces"
     ],
@@ -15,17 +15,12 @@
         "clock"
     ],
     "hyprland/window": {
+        "format": "{initialTitle}",
         "icon": true,
-        "format": "{class}",
         "rewrite": {
-            "(.*)kitty(.*)": "Terminal",
-            "(.*)Firefox(.*)": "Firefox",
-            "(.*)Spotify(.*)": "Spotify",
-            "(.*)Discord(.*)": "Discord",
-            "(.*)zathura(.*)": "Zathura",
-            "(.*)mpv(.*)": "MPV Player"
+            "": "NixOs",
+            "(.*)Obsidian(.*)": "Obsidian",
         },
-        "max-length": 100,
         "icon-size": 20,
         "tooltip": false
     },

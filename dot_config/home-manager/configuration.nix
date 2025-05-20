@@ -34,6 +34,8 @@
     # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
 
+    nixpkgs.config.allowUnfree = true;
+
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
         # System

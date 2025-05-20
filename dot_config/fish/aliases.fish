@@ -18,6 +18,9 @@ if type -q bat
   alias cat 'bat --paging=never'
 end
 
+# Bat
+alias cat 'bat --paging=never'
+
 # gomi
 if type -q gomi
   alias rm 'gomi'

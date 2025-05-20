@@ -36,4 +36,5 @@ require("lazy").setup(plugins, {
 	},
 })
 
+-- Keymaps
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Open Lazy" })
