@@ -26,6 +26,7 @@
         discord
         obsidian
         blender
+        obs-studio
 
         # Fonts
         nerd-fonts.fira-code
@@ -63,6 +64,9 @@
         nodejs
         dart-sass
     ];
+
+    # Enable batsignal for battery status notification.
+    services.batsignal.enable = true;
 
     # Home Manager release compatability.
     home.stateVersion = "24.11";

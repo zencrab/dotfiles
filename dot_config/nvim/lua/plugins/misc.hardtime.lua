@@ -3,7 +3,7 @@ return {
 	event = "LazyFile",
 
 	opts = {
-		disable_mouse = true,
+		disable_mouse = false,
 		timeout = 5000,
 	},
 

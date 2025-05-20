@@ -23,6 +23,7 @@
     networking.wireless.iwd.enable = true;
     networking.enableIPv6 = false;
 
+    # Set the timezone.
     time.timeZone = "Europe/London";
 
     # Enable sound.
@@ -34,16 +35,16 @@
     # Enable touchpad support (enabled default in most desktopManager).
     services.libinput.enable = true;
 
+    # Enable not free packages.
     nixpkgs.config.allowUnfree = true;
 
     # List packages installed in system profile.
     environment.systemPackages = with pkgs; [
         # System
-        auto-cpufreq
         brightnessctl
         libnotify
         pulseaudio
-        toybox # Unix CLI utilities (killall, etc.)
+        busybox
         bluetui
 
         # Fish shell and plugins
