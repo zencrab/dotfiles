@@ -101,6 +101,11 @@
       "keyColor": "yellow"
     },
     {
+      "type": "disk",
+      "key": "   Disk",
+      "keyColor": "yellow"
+    },
+    {
       "type": "display",
       "key": "  󰍹 Display",
       "format": "{1}x{2} @ {3}Hz [{7}]",
