@@ -19,6 +19,12 @@
     nixpkgs.config.allowUnfree = true;
 
     home.packages = with pkgs; [
+        # Must-have programs
+        zathura
+        discord
+        obsidian
+        blender
+
         # Fonts
         nerd-fonts.fira-code
 
@@ -26,6 +32,7 @@
         btop
         chezmoi
         eza
+        entr
         fastfetch
         fd
         fzf
@@ -40,8 +47,6 @@
 
         # Development tools
         gcc
-        python3
-        nodejs
 
         # Must-have programs
         firefox
@@ -49,18 +54,13 @@
         discord
         mpv
 
-        # Neovim packages
-        neovim
-        tree-sitter
+        # Python
+        python3
+        poetry
 
-        # LSPs
-        lua-language-server
-        nil
-        pyright
-        # Formatters
-        nixfmt-rfc-style
-        stylua
-        ruff
+        # Web dev
+        nodejs
+        dart-sass
     ];
 
     # Home Manager release compatability.

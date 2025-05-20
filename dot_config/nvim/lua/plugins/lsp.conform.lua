@@ -8,6 +8,8 @@ return {
 	opts = {
 		-- define formatters by filetype
 		formatters_by_ft = {
+			html = { "prettier" },
+			javascript = { "prettier" },
 			lua = { "stylua" },
 			nix = { "nixfmt" },
 			python = { "ruff_format" },

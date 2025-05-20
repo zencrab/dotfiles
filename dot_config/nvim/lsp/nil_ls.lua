@@ -1,5 +1,5 @@
 vim.lsp.config("nil_ls", {
-	-- Server settings.
+	-- Server settings
 	settings = {
 		["nil"] = {
 			telemetry = {

@@ -5,11 +5,20 @@ alias clears 'printf "\ec\e[3J"'
 alias fz 'nvim "$(fzf)"'
 
 # Eza 
-alias ls 'eza --color=always --icons=auto --group-directories-first'
-alias ll 'ls --long'
-alias la 'ls --all'
-alias tree 'eza --tree --git-ignore --color=always --icons=auto'
-alias tree4 'tree --level=4'
+if type -q eza
+  alias ls 'eza --color=always --icons=auto --group-directories-first'
+  alias ll 'ls --long'
+  alias la 'ls --all'
+  alias tree 'eza --tree --git-ignore --color=always --icons=auto'
+  alias tree4 'tree --level=4'
+end
+
+# Bat
+if type -q bat
+  alias cat 'bat --paging=never'
+end
 
 # gomi
-alias rm 'gomi'
+if type -q gomi
+  alias rm 'gomi'
+end
