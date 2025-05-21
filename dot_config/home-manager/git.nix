@@ -4,7 +4,7 @@
     programs.git = {
         enable = true;
 
-        userName = "zencrab";
+        userName = "Adam Bisinella";
         userEmail = "adam.bisinella@icloud.com";
     };
 }
