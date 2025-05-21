@@ -223,7 +223,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    # icon_theme = Adwaita
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -346,7 +346,7 @@
     foreground = "#cdd6f4"
     timeout = 10
     # Icon for notifications with low urgency
-    default_icon = dialog-warning
+    # default_icon = dialog-warning
 
 [urgency_normal]
     background = "#1e1e2e"
@@ -355,7 +355,7 @@
     timeout = 10
     override_pause_level = 30
     # Icon for notifications with normal urgency
-    default_icon = dialog-information
+    # default_icon = dialog-information
 
 [urgency_critical]
     background = "#1e1e2e"
@@ -364,7 +364,7 @@
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency
-    default_icon = dialog-warning
+    # default_icon = dialog-warning
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
