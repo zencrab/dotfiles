@@ -3,7 +3,9 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ./bluetooth.nix
+
+        ./system/bluetooth.nix
+
         ./shell.nix
     ];
 

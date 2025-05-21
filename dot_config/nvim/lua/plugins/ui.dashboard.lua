@@ -31,7 +31,7 @@ return {
 				enable = false,
 			},
 			mru = {
-				limit = 15,
+				limit = 10,
 			},
 			shortcut = {
 				{
