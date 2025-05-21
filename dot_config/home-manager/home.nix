@@ -34,6 +34,7 @@
         zathura
         discord
         obsidian
+        gimp
         blender
         obs-studio
 
@@ -56,6 +57,9 @@
         tmux
         yazi
         zoxide
+
+        # TUI tools
+        gum
 
         # Development tools
         gcc

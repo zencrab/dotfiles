@@ -26,3 +26,4 @@ end
 
 # Conda
 source ~/.config/fish/conda.fish
+source ~/.config/fish/gum.fish

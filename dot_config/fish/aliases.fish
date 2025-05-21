@@ -27,5 +27,5 @@ if type -q gomi
 end
 
 if type -q fastfetch
-  alias fastani 'kitten icat -n --place 30x30@0x3 --scale-up --align left ~/.logos/nixos/logo.gif | fastfetch --logo-width 30 --raw -'
+  alias fastani 'gum spin --spinner minidot --title "Rendering system logo and fetching info..." -- kitten icat -n --place 30x30@0x3 --scale-up --align left ~/.logos/nixos/animation-60fps.gif | fastfetch --logo-width 30 --raw -'
 end
