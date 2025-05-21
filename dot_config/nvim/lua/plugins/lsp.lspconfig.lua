@@ -2,7 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	name = "lspconfig.nvim",
 
-	lazy = false,
+	event = { "BufReadPre" },
 
 	config = function()
 		require("configs.lsp")

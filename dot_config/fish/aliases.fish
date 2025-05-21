@@ -27,5 +27,5 @@ if type -q gomi
 end
 
 if type -q fastfetch
-  alias fastfetch-ani 'kitten icat -n --place 30x30@0x3 --scale-up --align left ~/.logos/nixos/logo.gif | fastfetch --logo-width 30 --raw -'
+  alias fastani 'kitten icat -n --place 30x30@0x3 --scale-up --align left ~/.logos/nixos/logo.gif | fastfetch --logo-width 30 --raw -'
 end
