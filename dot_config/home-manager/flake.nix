@@ -14,6 +14,12 @@
 
         # Spicetify
         spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+        # Battery Notifier (https://github.com/luisnquin/battery-notifier)
+        battery-notifier = {
+            url = "github:luisnquin/battery-notifier";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs =
@@ -22,8 +28,9 @@
             nixpkgs,
             home-manager,
 
-            # Flake outputs
+            # Custom outputs.
             spicetify-nix,
+            battery-notifier,
             ...
         }@inputs:
         let
@@ -48,6 +55,7 @@
                 ];
                 extraSpecialArgs = {
                     inherit spicetify-nix;
+                    inherit battery-notifier;
                 };
             };
         };

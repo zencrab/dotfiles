@@ -1,4 +1,9 @@
-{ pkgs, spicetify-nix, ... }:
+{
+    pkgs,
+    spicetify-nix,
+    battery-notifier,
+    ...
+}:
 
 {
     # Home Manager configuration for the user.
@@ -6,6 +11,10 @@
     home.homeDirectory = "/home/zencrab";
 
     imports = [
+        # Notifications
+        ./notifications/battery-notifier.nix
+        ./notifications/dunst.nix
+
         ./git.nix
         ./bat.nix
         ./neovim.nix
@@ -64,9 +73,6 @@
         nodejs
         dart-sass
     ];
-
-    # Enable batsignal for battery status notification.
-    services.batsignal.enable = true;
 
     # Home Manager release compatability.
     home.stateVersion = "24.11";
