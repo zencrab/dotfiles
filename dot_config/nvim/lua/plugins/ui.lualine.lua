@@ -4,7 +4,7 @@ return {
 	event = "LazyFile",
 
 	dependencies = {
-		"echasnovski/mini.nvim",
+		"echasnovski/mini.icons",
 	},
 
 	config = function()

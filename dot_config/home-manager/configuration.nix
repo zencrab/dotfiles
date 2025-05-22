@@ -65,6 +65,7 @@
         hyprpaper
         hyprshot
         hyprcursor
+        hyprpicker
         catppuccin-cursors.mochaBlue
         kitty
         waybar

@@ -11,22 +11,12 @@ right_format = """
 $conda$python
 """
 
+# Left side
 [directory]
 format = '[$read_only]($read_only_style)[$path]($style) '
 style = 'bold blue'
 read_only = ' '
 read_only_style = 'red'
-
-[conda]
-format = '[$symbol$environment]($style) '
-symbol = ' '
-style = 'green'
-ignore_base = false
-
-[python]
-format = '[${symbol}${version}]($style)'
-symbol = ' '
-style = 'yellow bold'
 
 [git_branch]
 format = 'on [$symbol$branch(:$remote_branch)]($style): '
@@ -50,6 +40,22 @@ renamed = '[+${count}](blue) '
 staged = '[+${count}](green) '
 deleted = '[-${count}](red) '
 
+# Right side
+[conda]
+format = '[$symbol$environment]($style) '
+symbol = ' '
+style = 'green'
+ignore_base = false
+
+[python]
+format = '[${symbol}${version}]($style) '
+symbol = ' '
+style = 'yellow bold'
+
+[nix_shell]
+symbol = ' '
+
+# Catpuccin mocha color palette
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"

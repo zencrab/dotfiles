@@ -5,7 +5,7 @@ return {
 
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
-		"echasnovski/mini.nvim",
+		"echasnovski/mini.icons",
 	},
 
 	---@module 'render-markdown'

@@ -3,7 +3,7 @@ return {
 	name = "dashboard.nvim",
 
 	dependencies = {
-		"echasnovski/mini.nvim",
+		"echasnovski/mini.icons",
 	},
 
 	event = "VimEnter",

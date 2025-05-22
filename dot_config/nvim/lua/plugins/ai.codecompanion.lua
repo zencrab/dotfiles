@@ -2,9 +2,10 @@ return {
 	"olimorris/codecompanion.nvim",
 
 	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
 		"nvim-lua/plenary.nvim",
-		"ravitemer/codecompanion-history.nvim",
 		"MeanderingProgrammer/render-markdown.nvim",
+		"ravitemer/codecompanion-history.nvim",
 	},
 
 	opts = {
