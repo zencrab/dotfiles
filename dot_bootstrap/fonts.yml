@@ -1,3 +1,0 @@
-- name: Install package ttf-jetbrains-mono-nerd
-  kewlfft.aur.aur:
-    name: ttf-jetbrains-mono-nerd

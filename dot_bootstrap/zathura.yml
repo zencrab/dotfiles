@@ -1,5 +1,0 @@
-- name: Install package zathura, zathura-pdf-poppler
-  kewlfft.aur.aur:
-    name:
-      - zathura
-      - zathura-pdf-poppler

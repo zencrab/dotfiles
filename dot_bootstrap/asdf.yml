@@ -1,3 +1,0 @@
-- name: Install package asdf-vm
-  kewlfft.aur.aur:
-    name: asdf-vm

@@ -1,4 +1,0 @@
-- name: Install package obsidian 
-  kewlfft.aur.aur:
-    name: obsidian
-

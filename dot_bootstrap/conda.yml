@@ -1,5 +1,0 @@
-- name: Install package miniconda3, python-cryptography
-  kewlfft.aur.aur:
-    name:
-      - miniconda3
-      - python-cryptography
