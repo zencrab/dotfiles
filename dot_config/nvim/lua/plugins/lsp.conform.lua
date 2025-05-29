@@ -17,9 +17,7 @@ return {
 
 		-- customise formatters
 		formatters = {
-			nixfmt = {
-				args = { "--indent=4" },
-			},
+			nixfmt = {},
 		},
 
 		-- set default options

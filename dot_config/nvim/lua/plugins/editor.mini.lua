@@ -1,14 +1,13 @@
 return {
 	{
-		"echasnovski/mini.nvim",
+		"echasnovski/mini.ai",
 		version = "*", -- stable release
 
 		event = "LazyFile",
 
-		config = function()
-			-- mini.ai
+		opts = function()
 			local ai = require("mini.ai")
-			ai.setup({
+			return {
 				custom_textobjects = {
 					-- adds iB/aB (bracket)
 					s = { "%[%[().-()%]%]" },
@@ -22,26 +21,48 @@ return {
 						i = { "@block.inner", "@conditional.inner", "@loop.inner" },
 					}),
 				},
-			})
+			}
+		end,
+	},
+	{
+		"echasnovski/mini.surround",
+		version = "*", -- stable release
 
-			-- mini.surround
-			require("mini.surround").setup()
+		event = "LazyFile",
 
-			-- mini.comment
-			require("mini.comment").setup()
+		opts = {},
+	},
+	{
+		"echasnovski/mini.comment",
+		version = "*", -- stable release
 
-			-- mini.pairs
-			require("mini.pairs").setup({
-				modes = {
-					insert = true,
-					command = true,
-					terminal = false,
-				},
-			})
+		event = "LazyFile",
 
-			-- mini.hipatterns
+		opts = {},
+	},
+	{
+		"echasnovski/mini.pairs",
+		version = "*", -- stable release
+
+		event = "InsertEnter",
+
+		opts = {
+			modes = {
+				insert = true,
+				command = true,
+				terminal = false,
+			},
+		},
+	},
+	{
+		"echasnovski/mini.hipatterns",
+		version = "*", -- stable release
+
+		event = "LazyFile",
+
+		opts = function()
 			local hipatterns = require("mini.hipatterns")
-			hipatterns.setup({
+			return {
 				highlighters = {
 
 					-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
@@ -53,10 +74,21 @@ return {
 					-- Highlight hex color strings (`#rrggbb`) using that color
 					hex_color = hipatterns.gen_highlighter.hex_color(),
 				},
-			})
+			}
+		end,
+	},
+	{
+		"echasnovski/mini.icons",
+		lazy = true,
 
-			-- mini.icons
-			require("mini.icons").setup()
+		opts = {
+			filetype = {
+				codecompanion = { glyph = " ", hl = "MiniIconsRed" },
+			},
+		},
+
+		config = function(_, opts)
+			require("mini.icons").setup(opts)
 			MiniIcons.mock_nvim_web_devicons()
 		end,
 	},

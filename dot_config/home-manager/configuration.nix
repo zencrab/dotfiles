@@ -4,8 +4,11 @@
     imports = [
         ./hardware-configuration.nix
 
+        # System
         ./system/bluetooth.nix
+        ./system/hyprland.nix
 
+        # Shell
         ./shell.nix
     ];
 
@@ -59,35 +62,7 @@
 
         # Developments tools
         git
-
-        # VM (Hyprland)
-        hyprlock
-        hyprpaper
-        hyprshot
-        hyprcursor
-        hyprpicker
-        catppuccin-cursors.mochaBlue
-        kitty
-        waybar
-        wl-clipboard
-        wofi
     ];
-
-    # Hyprland
-    programs.hyprland = {
-        enable = true;
-        xwayland.enable = true;
-    };
-    #  # Start Hyprland on bootup
-    services.greetd = {
-        enable = true;
-        settings = {
-            default_session = {
-                command = "${pkgs.hyprland}/bin/Hyprland";
-                user = "zencrab";
-            };
-        };
-    };
 
     # Enable automatic CPU speed and power optimiser daemon.
     services.auto-cpufreq.enable = true;

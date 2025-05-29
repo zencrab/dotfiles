@@ -15,7 +15,6 @@ return {
 			fidget = true,
 			flash = true,
 			gitsigns = true,
-			mason = true,
 			mini = {
 				enabled = true,
 				indentscope_color = "blue",

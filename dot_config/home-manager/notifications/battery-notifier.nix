@@ -22,16 +22,16 @@
             reminder = {
                 title = "Low Battery";
                 content = "Consider plugging your system into a power outlet.";
-                threshold = 30;
+                threshold = 20;
             };
             warn = {
                 title = "Low Battery";
-                content = "It is recommended to plug your system into a power outlet.";
+                content = "Recommended to plug your system into a power outlet.";
                 threshold = 15;
             };
             threat = {
                 title = "Critical Battery";
-                content = "Your system will shutdown soon unless plugged into a power outlet.";
+                content = "System will shutdown soon unless plugged into a power outlet.";
                 threshold = 5;
             };
         };

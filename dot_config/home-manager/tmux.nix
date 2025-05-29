@@ -8,6 +8,7 @@
             tmuxPlugins.catppuccin
             tmuxPlugins.vim-tmux-navigator
             tmuxPlugins.yank
+            tmuxPlugins.jump
         ];
 
         extraConfig = ''

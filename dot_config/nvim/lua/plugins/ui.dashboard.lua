@@ -27,18 +27,13 @@ return {
 				[[                                                                       ]],
 				[[                                                                       ]],
 			},
-			project = {
-				enable = false,
-			},
-			mru = {
-				limit = 10,
-			},
 			shortcut = {
 				{
 					icon = "󰏔 ",
 					desc = "Plugins",
 					group = "Number",
 					action = "Lazy",
+					{ enable = true }, -- show how many plugi
 					key = "p",
 				},
 				{
@@ -68,6 +63,14 @@ return {
 					end,
 					key = "c",
 				},
+			},
+			project = {
+				action = function(path)
+					Snacks.picker.files({
+						title = "Project Files (" .. path .. ")",
+						cwd = path,
+					})
+				end,
 			},
 			footer = {},
 		},

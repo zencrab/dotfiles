@@ -3,3 +3,5 @@ dot_config/home-manager/flake.lock
 
 # Blender backups
 **.blend[0-9]*
+dot_logos/nixos/blender/logo.blend1
+dot_bootstrap/zathura.yml

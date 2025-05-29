@@ -5,6 +5,7 @@ vim.lsp.config("lua_ls", {
 			diagnostics = {
 				globals = {
 					"Snacks",
+					"MiniIcons",
 				},
 			},
 			runtime = {

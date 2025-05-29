@@ -18,7 +18,11 @@ return {
 		-- Picker
 		picker = {
 			enabled = true,
-			ui_select = true,
+		},
+
+		-- Rename
+		rename = {
+			enabled = true,
 		},
 	},
 

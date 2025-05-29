@@ -6,6 +6,6 @@
         enable = true;
         package = pkgs.dunst;
 
-        configFile = "~/.config/dunst/dunst.rc";
+        configFile = "/home/zencrab/.config/dunst/dunst.rc";
     };
 }

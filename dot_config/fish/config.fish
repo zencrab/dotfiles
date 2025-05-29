@@ -1,7 +1,7 @@
 # Disable greeting
 set fish_greeting
 
-# Set Neovim as default editor 
+# Set Neovim as default editor
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
 
@@ -27,3 +27,9 @@ end
 # Conda
 source ~/.config/fish/conda.fish
 source ~/.config/fish/gum.fish
+
+# Tmux
+# if status is-interactive
+# and not set -q TMUX
+#   exec tmux
+# end

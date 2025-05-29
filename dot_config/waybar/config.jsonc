@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
   "position": "bottom",
-  "margin": "0 4 1 4",
+  "margin": "1 1 1 1",
   "modules-left": [
     "hyprland/workspaces"
   ],
@@ -10,6 +10,7 @@
   ],
   "modules-right": [
     "group/expand",
+    "custom/pomodoro",
     "battery",
     "network",
     "clock"
@@ -18,8 +19,11 @@
     "format": "{initialTitle}",
     "icon": true,
     "rewrite": {
-      "": "NixOs",
-      "(.*)Obsidian(.*)": "Obsidian",
+      "(.*)Firefox(.*)": "Firefox",
+      "(.*)Spotify(.*)": "Spotify",
+      "(.*)GNU Image Manipulation Program(.*)": "GIMP",
+      "(.*)kitty(.*)": "Kitty",
+      "(.*)Obsidian(.*)": "Obsidian"
     },
     "icon-size": 20,
     "tooltip": false
@@ -46,10 +50,10 @@
     "modules": [
       "custom/expand",
       "cpu",
-      "temperature",
       "memory",
       "backlight",
       "pulseaudio",
+      "custom/colorPicker",
       "custom/endpoint"
     ]
   },
@@ -59,11 +63,6 @@
   },
   "memory": {
     "format": "  {percentage}%"
-  },
-  "temperature": {
-    "critical-threshold": 80,
-    "format": " {temperatureC}°C",
-    "tooltip": false
   },
   "tray": {
     "icon-size": 14,
@@ -116,7 +115,7 @@
   },
   "backlight": {
     "device": "acpi_video1",
-    "format": " {}%",
+    "format": " {}%",
     "tooltip": false
   },
   "pulseaudio": {
@@ -138,5 +137,18 @@
     },
     "tooltip": true,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+  "custom/colorPicker": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "hyprpicker --autocopy"
+  },
+  "custom/pomodoro": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-pomodoro --work 55 --play '' --pause '' --no-work-icons --persist",
+    "on-click": "waybar-module-pomodoro toggle",
+    "on-click-right": "waybar-module-pomodoro reset",
+    "tooltip": false
   }
 }

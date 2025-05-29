@@ -1,88 +1,127 @@
 @import "catppuccin-mocha.css";
 
 * {
-    font-family: "FiraCode Nerd Font"; 
-    font-weight: 500;
-    font-size: 13px;
+  font-family: "Ubuntu Nerd Font", "FiraCode Nerd Font";
+  font-weight: 500;
+  font-size: 13.5px;
 }
 
 window#waybar {
-    background: @base;
-    border: 2px solid @blue;
-    border-radius: 6px;
+  background: @base;
+  border: 2px solid @blue;
+  border-radius: 6px;
 }
 
-.modules-left, .modules-center, .modules-right {
-    padding: 8px 0px 8px 0px;
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 8px 0px 8px 0px;
 }
 
 .modules-center {
-    color: @text;
-    padding: 0px 15px;
+  color: @text;
+  padding: 0px 15px;
 }
 
 .modules-right {
-    color: @text;
+  color: @text;
 }
 
 #workspaces {
-    padding: 0px 5px;
-}
-#workspaces button {
-    all:unset;
-    padding: 0px 8px;
-    color: @overlay0;
-}
-#workspaces button.active {
-    color: @text
+  padding: 0px 5px;
 }
 
-#custom-endpoint, #custom-expand {
-    padding: 0px 5px;
+#workspaces button {
+  all: unset;
+  padding: 0px 8px;
+  color: @overlay0;
 }
-#bluetooth, #cpu, #memory, #temperature, #backlight, #pulseaudio, #network, #battery, #clock {
-    padding: 0px 10px;
+
+#workspaces button.active {
+  color: @text
+}
+
+#custom-endpoint,
+#custom-expand {
+  padding: 0px 5px;
+}
+
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#custom-pomodoro {
+  padding: 0px 10px;
 }
 
 
 /* -------------------------------- Tooltip -------------------------------- */
 
 tooltip {
-    background: @surface0;
-    color: @subtext1;
-    border: 2px solid @blue;
-    padding: 0px 0px 0px 0px;
+  background: @surface0;
+  color: @subtext1;
+  border: 2px solid @blue;
+  padding: 0px 0px 0px 0px;
 }
 
 
 /* -------------------------------- Battery -------------------------------- */
 
-#battery.charging, #battery.plugged, #battery.full {
-    color: @green;
+#battery.charging,
+#battery.plugged,
+#battery.full {
+  color: @green;
 }
 
 #battery.warning,
 #battery.charging.warning {
-    color: @yellow;
+  color: @yellow;
 }
 
 #battery.critical,
 #battery.charging.critical {
-    color: @red;
+  color: @red;
 }
 
 
 /* -------------------------------- Volume --------------------------------- */
-#pulseaudio.muted.normal, #pulseaudio.muted.loud, #pulseaudio.muted {
-    color: @surface2;
+#pulseaudio.muted.normal,
+#pulseaudio.muted.loud,
+#pulseaudio.muted {
+  color: @overlay0;
 }
 
 #pulseaudio.normal {
-    color: @text;
+  color: @text;
 }
+
 #pulseaudio.loud {
-    color: @yellow;
+  color: @yellow;
 }
+
 #pulseaudio {
-    color: @red;
+  color: @red;
+}
+
+
+/* ------------------------------- Pomodoro -------------------------------- */
+#custom-pomodoro {
+  color: @text
+}
+
+#custom-pomodoro.work {
+  color: @text
+}
+
+#custom-pomodoro.pause {
+  color: @overlay0
+}
+
+#custom-pomodoro.break {
+  color: @green
 }

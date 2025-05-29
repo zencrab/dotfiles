@@ -45,7 +45,7 @@ end)
 vim.o.winborder = "rounded"
 
 -- Conceal lines (Markdown, LaTex)
-vim.opt.conceallevel = 2
+vim.opt.conceallevel = 3
 
 -- -------------------------------- Editor -------------------------------------
 

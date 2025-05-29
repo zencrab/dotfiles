@@ -25,11 +25,11 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = 350
 
     # The height of a single notification, excluding the frame.
     # dynamic height from 0 to 300
-    height = (0, 300)
+    height = (0, 350)
     # constant height of 300
     # height = 300
     # NOTE: Dunst from version 1.11 and older don't support dynamic height
@@ -76,7 +76,7 @@
     progress_bar_corners = all
 
     # Corner radius for the icon image.
-    icon_corner_radius = 3
+    icon_corner_radius = 2
 
     # Define which corners to round when drawing the icon image. If icon_corner_radius
     # is set to 0 this option will be ignored.
@@ -105,7 +105,7 @@
     horizontal_padding = 8
 
     # Padding between text and icon.
-    text_icon_padding = 4
+    text_icon_padding = 15
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -295,7 +295,7 @@
     layer = top
 
     # Set this to true to use X11 output on Wayland.
-    force_xwayland = false
+    force_xwayland = true 
 
     ### Legacy
 

@@ -1,3 +1,5 @@
+local lualine = require("modules.lualine")
+
 return {
 	"nvim-lualine/lualine.nvim",
 
@@ -7,94 +9,85 @@ return {
 		"echasnovski/mini.icons",
 	},
 
-	config = function()
-		local function get_color(color)
-			local palette = require("catppuccin.palettes").get_palette("mocha")
-			return palette[color]
-		end
+	opts = {
+		enabled = true,
+		options = {
+			theme = "catppuccin",
+			section_separators = { left = "", right = "" },
+			component_separators = { left = "", right = "" },
+		},
+		sections = {
 
-		local function cursor_location()
-			local progress = math.floor((tonumber(vim.fn.line(".")) / tonumber(vim.fn.line("$"))) * 100)
-			local location = vim.fn.line(".") .. ":" .. vim.fn.col(".")
-			return progress .. "%% " .. location
-		end
-
-		local function get_lsp_status()
-			local clients = vim.lsp.get_clients({ bufnr = 0 })
-			return (#clients > 0) and " LSP" or " LSP"
-		end
-
-		local function get_lsp_color()
-			local clients = vim.lsp.get_clients({ bufnr = 0 })
-			return { fg = (#clients > 0) and get_color("green") or get_color("subtext0") }
-		end
-
-		local function get_file_icon_and_name()
-			local filename = vim.fn.expand("%:t")
-			if vim.bo.filetype == "codecompanion" then
-				return " " .. "CodeCompanion"
-			end
-			local ext = vim.fn.expand("%:e")
-			local icon = require("mini.icons").get("extension", ext, { default = true })
-			return icon .. " " .. filename
-		end
-
-		local function get_cwd_name()
-			return "󰉖 " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-		end
-
-		require("lualine").setup({
-			options = {
-				theme = "catppuccin",
-				section_separators = { left = "", right = "" },
-				component_separators = "",
-				globalstatus = true,
-			},
-			sections = {
-				lualine_a = {
-					{
-						"mode",
-						separator = { left = "", right = "" },
-						icon = "",
-					},
-				},
-
-				lualine_b = {
-					{
-						cursor_location,
-						color = { fg = get_color("subtext0"), bg = get_color("base") },
-						padding = { left = 1, right = 0 },
-					},
-				},
-				lualine_c = {
-					{},
-				},
-
-				lualine_x = {
-					{
-						get_lsp_status,
-						color = get_lsp_color,
-						on_click = function()
-							vim.cmd("checkhealth vim.lsp")
-						end,
-					},
-				},
-
-				lualine_y = {
-					{
-						get_file_icon_and_name,
-						color = { fg = get_color("base"), bg = get_color("maroon"), gui = "bold" },
-					},
-				},
-
-				lualine_z = {
-					{
-						get_cwd_name,
-						color = { fg = get_color("base"), bg = get_color("rosewater"), gui = "bold" },
-						separator = { left = "", right = "" },
-					},
+			-- Vim Mode
+			lualine_a = {
+				{
+					"mode",
+					icon = "",
+					separator = { left = "", right = "" },
 				},
 			},
-		})
-	end,
+
+			-- Cursor location
+			lualine_b = {
+				{
+					lualine.cursor,
+					color = { fg = lualine.palette["subtext1"], bg = lualine.palette["surface0"] },
+					padding = { left = 1, right = 0 },
+				},
+			},
+
+			-- Disable section C
+			lualine_c = { {} },
+
+			-- LSP Status
+			lualine_x = {
+				{
+					"lsp_status",
+					icon = "",
+					symbols = {
+						done = "",
+					},
+					ignore_lsp = { "null-ls", "copilot" },
+					color = function()
+						return {
+							fg = lualine.palette["green"],
+							bg = lualine.palette["base"],
+							gui = "bold",
+						}
+					end,
+					on_click = function()
+						vim.cmd("checkhealth vim.lsp")
+					end,
+				},
+			},
+
+			-- Current file
+			lualine_y = {
+				{
+					lualine.file,
+					color = { fg = lualine.palette["base"], bg = lualine.palette["maroon"], gui = "bold" },
+					separator = { left = "" },
+				},
+			},
+
+			-- Current working directory
+			lualine_z = {
+				{
+					lualine.cwd,
+					color = { fg = lualine.palette["base"], bg = lualine.palette["rosewater"], gui = "bold" },
+					separator = { left = "", right = "" },
+				},
+			},
+		},
+	},
+
+	keys = {
+		{
+			"<leader>llt",
+			function()
+				lualine:toggle()
+			end,
+			desc = "Toggle Lualine",
+		},
+	},
 }
