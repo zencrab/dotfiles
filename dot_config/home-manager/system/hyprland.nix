@@ -5,7 +5,7 @@
     enable = true;
     xwayland.enable = true;
   };
-  #  # Start Hyprland on bootup (https://github.com/apognu/tuigreet/issues/68#issuecomment-1586359960)
+  #  # Start Hyprland on bootup
   services.greetd = {
     enable = true;
     settings = {
@@ -14,8 +14,10 @@
         user = "greeter";
       };
     };
-
   };
+
+  # Greetd tuigreet configuration service to avoid logs on screen.
+  # https://github.com/apognu/tuigreet/issues/68#issuecomment-1586359960
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
     StandardInput = "tty";
