@@ -44,6 +44,7 @@
 
   home.packages = with pkgs; [
     waybar-module-pomodoro
+
     # Must-have programs
     zathura
     discord

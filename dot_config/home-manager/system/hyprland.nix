@@ -5,18 +5,34 @@
     enable = true;
     xwayland.enable = true;
   };
-  #  # Start Hyprland on bootup
+  #  # Start Hyprland on bootup (https://github.com/apognu/tuigreet/issues/68#issuecomment-1586359960)
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "zencrab";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "greeter";
       };
     };
+
+  };
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    # Without this errors will spam on screen
+    StandardError = "journal";
+    # Without these bootlogs will spam on screen
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
   };
 
   environment.systemPackages = with pkgs; [
+    # Greetd
+    greetd.tuigreet
+
+    # Hyprland
     hyprlock
     hyprpaper
     hyprpicker

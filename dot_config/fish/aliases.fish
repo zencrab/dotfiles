@@ -28,3 +28,4 @@ alias fa 'gum spin --spinner minidot --title "Rendering system logo and fetching
 # home-manager
 alias hm 'home-manager'
 alias hm-switch 'home-manager switch --flake ~/.config/home-manager/'
+alias nx-switch 'nixos-rebuild switch --use-remote-sudo --flake ~/.config/home-manager/'
