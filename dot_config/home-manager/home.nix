@@ -45,8 +45,9 @@
     zathura
     discord
     obsidian
-    blender
     obs-studio
+    blender
+    inkscape
 
     # Fonts
     nerd-fonts.fira-code

@@ -14,7 +14,7 @@ $conda$python
 # Left side
 [directory]
 format = '[$read_only]($read_only_style)[$path]($style) '
-style = 'bold blue'
+style = 'bold peach'
 read_only = ' '
 read_only_style = 'red'
 
@@ -22,7 +22,7 @@ read_only_style = 'red'
 format = 'on [$symbol$branch(:$remote_branch)]($style): '
 symbol = ' '
 style = 'bold text'
-truncation_length = 10 
+truncation_length = 10
 truncation_symbol = "…"
 
 [git_status]
