@@ -1,8 +1,5 @@
 {
-  inputs,
   pkgs,
-  spicetify-nix,
-  battery-notifier,
   ...
 }:
 
@@ -12,23 +9,28 @@
   home.homeDirectory = "/home/zencrab";
 
   imports = [
+    # Fonts
+    ./fonts.nix
+
     # Notifications
     ./notifications/battery-notifier.nix
     ./notifications/dunst.nix
 
-    # Software
+    # Softwares
     ./software/firefox.nix
-    ./software/spotify.nix
     ./software/gimp.nix
+    ./software/mpv.nix
+    ./software/spotify.nix
 
-    ./git.nix
-    ./bat.nix
-    ./neovim.nix
-    ./tmux.nix
-    ./mpv.nix
-    ./yazi.nix
+    # CLI Tools
+    ./cli-tools/bat.nix
+    ./cli-tools/git.nix
+    ./cli-tools/neovim.nix
+    ./cli-tools/tmux.nix
+    ./cli-tools/yazi.nix
   ];
 
+  # Local packages
   nixpkgs.overlays = [
     (final: prev: {
       waybar-module-pomodoro =
@@ -36,6 +38,7 @@
           { };
     })
   ];
+
   # Packages
   nixpkgs.config.allowUnfree = true;
 
@@ -48,10 +51,6 @@
     obs-studio
     blender
     inkscape
-
-    # Fonts
-    nerd-fonts.fira-code
-    nerd-fonts.ubuntu
 
     # CLI tools
     asciinema

@@ -34,11 +34,11 @@ window#waybar {
 #workspaces button {
   all: unset;
   padding: 0px 8px;
-  color: @overlay0;
+  color: @overlay2;
 }
 
 #workspaces button.active {
-  color: @text
+  color: @peach
 }
 
 #custom-endpoint,
