@@ -76,6 +76,7 @@
     gum
 
     # Development tools
+    qtcreator
     gcc
 
     # Lua
@@ -87,8 +88,9 @@
     nix-prefetch-github
 
     # Python
-    python3
     poetry
+    python3
+    python312Packages.pyside6
 
     # Rust
     rustc

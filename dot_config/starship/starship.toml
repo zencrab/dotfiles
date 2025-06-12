@@ -8,13 +8,13 @@ $character
 """
 
 right_format = """
-$conda$python
+$conda$python$nix_shell$nodejs
 """
 
 # Left side
 [directory]
 format = '[$read_only]($read_only_style)[$path]($style) '
-style = 'bold peach'
+style = 'bold blue'
 read_only = ' '
 read_only_style = 'red'
 
@@ -54,6 +54,10 @@ style = 'yellow bold'
 
 [nix_shell]
 symbol = ' '
+
+[nodejs]
+format = '[${symbol}${version}]($style) '
+symbol = ' '
 
 # Catpuccin mocha color palette
 [palettes.catppuccin_mocha]

@@ -50,18 +50,18 @@
     {
       "type": "terminal",
       "key": "   Terminal",
-      "keyColor": "magenta"
+      "keyColor": "yellow"
     },
     {
       "type": "shell",
       "key": "   Shell",
-      "keyColor": "magenta"
+      "keyColor": "yellow"
     },
     {
       "type": "wm",
       "key": "  󱗃 WM",
       "format": "{pretty-name} {version} on {3}",
-      "keyColor": "magenta"
+      "keyColor": "yellow"
     },
     {
       "type": "custom",
@@ -96,20 +96,20 @@
       "keyColor": "cyan"
     },
     {
-      "type": "memory",
-      "key": "   Memory ",
-      "keyColor": "yellow"
-    },
-    {
-      "type": "disk",
-      "key": "   Disk",
-      "keyColor": "yellow"
-    },
-    {
       "type": "display",
       "key": "  󰍹 Display",
       "format": "{1}x{2} @ {3}Hz [{7}]",
       "keyColor": "green"
+    },
+    {
+      "type": "memory",
+      "key": "   Memory ",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "disk",
+      "key": "   Disk",
+      "keyColor": "magenta"
     },
     {
       "type": "custom",
